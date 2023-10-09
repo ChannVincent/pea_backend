@@ -3,15 +3,36 @@ from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import json
 
+
 def sync():
     integration = YahooFinanceIntegration.objects.first()
     api = YahooFinanceAPI(integration.api_key, integration.api_host)
     businesses = Business.objects.all()
     for business in businesses:
-        result = api.get_earnings(stock=business.symbol, country=business.country_code)
-        integrate_earnings(business, result)
-        print(result)
+        earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
+        integrate_earnings(business, earnings)
+        cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+        integrate_cashflow(business, cashflow)
 
+def integrate_cashflow(business, cashflow):
+    cashflow.get("")
+    # TODO timeSeries.annualEndCashPosition
+    # TODO timeSeries.annualRepaymentOfDebt
+    # TODO timeSeries.annualSaleOfInvestment
+    # TODO timeSeries.annualCapitalExpenditure
+
+    # TODO timeSeries.annualPurchaseOfInvestment
+    # TODO timeSeries.annualStockBasedCompensation
+
+    # TODO timeSeries.annualNetIncome
+    # TODO timeSeries.annualDepreciationAndAmortization
+    # TODO timeSeries.annualNetOtherFinancingCharges
+    # TODO timeSeries.annualOtherNonCashItems
+    
+    # TODO timeSeries.annualOperatingCashFlow
+    # TODO timeSeries.annualInvestingCashFlow
+    # TODO timeSeries.annualFreeCashFlow
+    
 def integrate_earnings(business, earnings):
     summary = earnings.get("quoteSummary")
     if not summary:
@@ -52,4 +73,5 @@ def integrate_earnings(business, earnings):
         quarter_report.earning = year.get("earnings").get("raw")
         quarter_report.revenue = year.get("revenue").get("raw")
         quarter_report.save()
+
         
