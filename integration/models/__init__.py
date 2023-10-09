@@ -1,1 +1,2 @@
 from .alphavantage import AlphavantageIntegration
+from .yahoofinance import YahooFinanceIntegration
