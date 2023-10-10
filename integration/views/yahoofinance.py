@@ -37,9 +37,6 @@ class YahooFinanceAPI:
         return self.get_stuff('get-earnings', stock, country)
     
     # cashflow v2/get-cash-flow
-    # cash trésorerie
-    # cash investie
-    # free, invest, operating cashflox
     def get_cashflow(self, stock, country):
         return self.get_stuff('v2/get-cash-flow', stock, country)
 
