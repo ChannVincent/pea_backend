@@ -12,6 +12,14 @@ class Business(models.Model):
     def __str__(self):
         return self.name
     
+    def serialize(self):
+        return {
+            'pk': self.pk,
+            'name': self.name,
+            'symbol': self.symbol,
+            'country_code': self.country_code,
+        }
+    
 
 class QuarterReport(models.Model):
     class Meta:
@@ -26,6 +34,14 @@ class QuarterReport(models.Model):
     def __str__(self):
         return f"{self.business}_{self.year}Q{self.quarter}"
 
+    def serialize(self):
+        return {
+            'year': self.year,
+            'quarter': self.quarter,
+            'earning': self.earning,
+            'revenue': self.revenue,
+        }
+    
 
 class YearlyReport(models.Model):
     class Meta:
@@ -52,3 +68,24 @@ class YearlyReport(models.Model):
     
     def __str__(self):
         return f"{self.business}_{self.year}"
+    
+    def serialize(self):
+        return {
+            'year': self.year,
+            'earning': self.earning,
+            'revenue': self.revenue,
+            'start_cash_position': self.start_cash_position,
+            'end_cash_position': self.end_cash_position,
+            'debt_repayment': self.debt_repayment,
+            'sale_of_investment': self.sale_of_investment,
+            'capital_expenditure': self.capital_expenditure,
+            'purchase_of_investment': self.purchase_of_investment,
+            'stock_based_compensation': self.stock_based_compensation,
+            'net_income': self.net_income,
+            'depreciation_and_ammortization': self.depreciation_and_ammortization,
+            'net_other_financing_charges': self.net_other_financing_charges,
+            'other_non_cash_items': self.other_non_cash_items,
+            'operating_cash_flow': self.operating_cash_flow,
+            'investing_cashflow': self.investing_cashflow,
+            'free_cash_flow': self.free_cash_flow,
+        }
