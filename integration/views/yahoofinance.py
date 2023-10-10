@@ -31,6 +31,7 @@ class YahooFinanceAPI:
     # todo summary v3/get-profile
     # todo avis analystes v2/get-analysis
     # todo financials v2/get-financials
+    # todo v2/get-balance-sheet
     
     # CA & bénéfices net
     def get_earnings(self, stock, country):
