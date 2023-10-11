@@ -36,8 +36,8 @@ SECURE_SSL_REDIRECT = False
 CORS_ALLOW_ALL_ORIGINS = True
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
-ALLOWED_HOSTS = ["127.0.0.1", "https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com/"]
-CSRF_TRUSTED_ORIGINS = ["127.0.0.1", "https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com/"]
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1", "http://localhost","https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com"]
 
 # Application definition
 
