@@ -30,6 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# SECURITY Django 4.0 : https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
+CSRF_TRUSTED_ORIGINS = ['https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com','https://*.127.0.0.1']
 
 # Application definition
 
