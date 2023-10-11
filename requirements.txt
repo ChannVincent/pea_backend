@@ -1,3 +1,6 @@
 Django==4.2.5
 # django-request==1.6.3
 requests==2.31.0
+django-environ==0.9.0 
+psycopg==3.1.12
+psycopg2==2.9.9
