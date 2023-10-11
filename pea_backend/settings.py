@@ -30,8 +30,15 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 
-# SECURITY Django 4.0 : https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
-CSRF_TRUSTED_ORIGINS = ['https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com','http://04qeb8it0j.execute-api.eu-west-3.amazonaws.com','http://*.127.0.0.1']
+# Security & HTTPS settings
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = ['https://04qeb8it0j.execute-api.eu-west-3.amazonaws.com']
+
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
 
 # Application definition
