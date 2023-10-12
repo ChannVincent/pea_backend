@@ -5,9 +5,22 @@ class Business(models.Model):
     class Meta:
         verbose_name = "Business"
         verbose_name_plural = "Businesses"
+    COUNTRY_CHOICES = (
+        ("FR", "France"),("DE", "Germany"),("ES", "Spain"),
+        ("CH", "Switzerland"),("UK", "United Kingdom"),("PT", "Portugal"),
+        ("BE", "Belgium"),("EL", "Greece"),("IE", "Ireland"),
+        ("LU", "Luxembourg"),("FI", "Finland"),("IT", "Italy"),
+        ("LI", "Liechtenstein"),("IS", "Iceland"),("NO", "Norway"),
+        ("SE", "Sweden"),("LT", "Lithuania"),("BG", "Bulgaria"),
+        ("CZ", "Czechia"),("HU", "Hungary"),("RO", "Romania"),
+        ("SI", "Slovenia"),("DK", "Denmark"),("HR", "Croatia"),
+        ("MT", "Malta"),("SK", "Slovakia"),("NL", "Netherlands"),
+        ("EE", "Estonia"),("CY", "Cyprus"),("AT", "Austria"),
+        ("LV", "Latvia"),("PL", "Poland"),
+    )
     name = models.CharField(max_length=256)
     symbol = models.CharField(max_length=20, unique=True, default="")
-    country_code = models.CharField(max_length=20, default="EU")
+    country_code = models.CharField(max_length=20, choices=COUNTRY_CHOICES, default="FR")
 
     def __str__(self):
         return self.name
