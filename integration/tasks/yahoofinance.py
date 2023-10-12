@@ -1,21 +1,26 @@
 from core.models.business import Business, YearlyReport, QuarterReport
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
+import datetime
 import json
 
 
 CASH_MULTIPLIER = 1000000
-
+TIME_BETWEEN_UPDATES = 24 * 30 # hours
 
 def sync():
     integration = YahooFinanceIntegration.objects.first()
     api = YahooFinanceAPI(integration.api_key, integration.api_host)
     businesses = Business.objects.all()
+    now = datetime.datetime.now()
     for business in businesses:
-        earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
-        integrate_earnings(business, earnings)
-        cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
-        integrate_cashflow(business, cashflow)
+        if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now:
+            earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
+            integrate_earnings(business, earnings)
+            cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+            integrate_cashflow(business, cashflow)
+            business.last_update = now
+            business.save()
 
 
 def integrate_cashflow(business, cashflow):

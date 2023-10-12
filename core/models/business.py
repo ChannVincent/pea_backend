@@ -21,6 +21,7 @@ class Business(models.Model):
     name = models.CharField(max_length=256)
     symbol = models.CharField(max_length=20, unique=True, default="")
     country_code = models.CharField(max_length=20, choices=COUNTRY_CHOICES, default="FR")
+    last_update = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -41,8 +42,8 @@ class QuarterReport(models.Model):
     business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
     year = models.IntegerField(default=1970)
     quarter = models.IntegerField(default=1)
-    earning = models.IntegerField(default=None, null=True)
-    revenue = models.IntegerField(default=None, null=True)
+    earning = models.IntegerField(default=None, null=True, blank=True)
+    revenue = models.IntegerField(default=None, null=True, blank=True)
 
     def __str__(self):
         return f"{self.business}_{self.year}Q{self.quarter}"
@@ -62,22 +63,22 @@ class YearlyReport(models.Model):
         verbose_name_plural = "Yearly Reports"
     business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
     year = models.IntegerField(default=1970)
-    earning = models.IntegerField(default=None, null=True)
-    revenue = models.IntegerField(default=None, null=True)
-    start_cash_position = models.IntegerField(default=None, null=True)
-    end_cash_position = models.IntegerField(default=None, null=True)
-    debt_repayment = models.IntegerField(default=None, null=True)
-    sale_of_investment = models.IntegerField(default=None, null=True)
-    capital_expenditure = models.IntegerField(default=None, null=True)
-    purchase_of_investment = models.IntegerField(default=None, null=True)
-    stock_based_compensation = models.IntegerField(default=None, null=True)
-    net_income = models.IntegerField(default=None, null=True)
-    depreciation_and_ammortization = models.IntegerField(default=None, null=True)
-    net_other_financing_charges = models.IntegerField(default=None, null=True)
-    other_non_cash_items = models.IntegerField(default=None, null=True)
-    operating_cash_flow = models.IntegerField(default=None, null=True)
-    investing_cashflow = models.IntegerField(default=None, null=True)
-    free_cash_flow = models.IntegerField(default=None, null=True)
+    earning = models.IntegerField(default=None, null=True, blank=True)
+    revenue = models.IntegerField(default=None, null=True, blank=True)
+    start_cash_position = models.IntegerField(default=None, null=True, blank=True)
+    end_cash_position = models.IntegerField(default=None, null=True, blank=True)
+    debt_repayment = models.IntegerField(default=None, null=True, blank=True)
+    sale_of_investment = models.IntegerField(default=None, null=True, blank=True)
+    capital_expenditure = models.IntegerField(default=None, null=True, blank=True)
+    purchase_of_investment = models.IntegerField(default=None, null=True, blank=True)
+    stock_based_compensation = models.IntegerField(default=None, null=True, blank=True)
+    net_income = models.IntegerField(default=None, null=True, blank=True)
+    depreciation_and_ammortization = models.IntegerField(default=None, null=True, blank=True)
+    net_other_financing_charges = models.IntegerField(default=None, null=True, blank=True)
+    other_non_cash_items = models.IntegerField(default=None, null=True, blank=True)
+    operating_cash_flow = models.IntegerField(default=None, null=True, blank=True)
+    investing_cashflow = models.IntegerField(default=None, null=True, blank=True)
+    free_cash_flow = models.IntegerField(default=None, null=True, blank=True)
     
     def __str__(self):
         return f"{self.business}_{self.year}"
