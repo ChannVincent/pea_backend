@@ -1,4 +1,5 @@
 import requests
+from core.models import DebugApiLog
 
 # https://rapidapi.com/apidojo/api/yahoo-finance1
 class YahooFinanceAPI:
@@ -21,11 +22,14 @@ class YahooFinanceAPI:
             "symbol":stock,
             "region":country,
         }
+        url = f"{self.base_url}/{stuff}"
         response = requests.get(
-            f"{self.base_url}/{stuff}", 
+            url, 
             headers=self.get_headers(), 
             params=params)
         body = response.json()
+        debug = DebugApiLog(url=url, data=body, params=params)
+        debug.save()
         return body
     
     # todo summary v3/get-profile
