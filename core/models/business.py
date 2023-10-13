@@ -221,3 +221,18 @@ class YearlyReport(models.Model):
             'investing_cashflow': self.investing_cashflow,
             'free_cash_flow': self.free_cash_flow,
         }
+    
+
+class MarketPrice(models.Model):
+    business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    date = models.DateField(default=None, null=True, blank=True)
+    open = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    high = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    low = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    close = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    adjclose = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    volume = models.IntegerField(default=None, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.business}_{self.date}"
+        

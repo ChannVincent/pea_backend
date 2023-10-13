@@ -1,4 +1,4 @@
-from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm
+from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm, MarketPrice
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import datetime
@@ -15,12 +15,14 @@ def sync(force=False):
     now = datetime.datetime.now()
     for business in businesses:
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
-            cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
-            integrate_cashflow(business, cashflow)
-            summary = api.get_summary(stock=business.symbol, country=business.country_code)
-            integrate_summary(business, summary)
+            # cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+            # integrate_cashflow(business, cashflow)
+            # summary = api.get_summary(stock=business.symbol, country=business.country_code)
+            # integrate_summary(business, summary)
             # recent_updates = api.get_updates(stock=business.symbol, country=business.country_code)
             # integrate_recent_updates(business, recent_updates)
+            market_price = api.get_market_price(stock=business.symbol, country=business.country_code)
+            integrate_market_price(business, market_price)
             business.last_update = now
             business.save()
 
@@ -361,4 +363,21 @@ def integrate_recent_updates(business, recent_updates):
         
 
 def integrate_market_price(business, market_price):
-    pass
+    prices = market_price.get("prices")
+    if not prices:
+        return
+    for price in prices:
+        timestamp = price.get("date")
+        if not timestamp:
+            continue
+        date = datetime.datetime.fromtimestamp(timestamp)
+        market_price = MarketPrice.objects.filter(business=business, date=date).first()
+        if not market_price:
+            market_price = MarketPrice(business=business, date=date)
+        market_price.open = price.get("open")
+        market_price.high = price.get("high")
+        market_price.low = price.get("low")
+        market_price.close = price.get("close")
+        market_price.volume = price.get("volume")
+        market_price.adjclose = price.get("adjclose")
+        market_price.save()

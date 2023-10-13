@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models.business import Business, BusinessInfo, AnalystGrade, Industry, Sector, QuarterReport, YearlyReport
+from .models.business import Business, BusinessInfo, AnalystGrade, Industry, Sector, QuarterReport, YearlyReport, MarketPrice
 from .models.debug import DebugApiLog
 
 
@@ -36,3 +36,7 @@ class BusinessInfoAdmin(admin.ModelAdmin):
 @admin.register(DebugApiLog)
 class DebugApiLogAdmin(admin.ModelAdmin):
     list_display = ("date", "url", "params")
+
+@admin.register(MarketPrice)
+class MarketPriceAdmin(admin.ModelAdmin):
+    list_filter = ("business",)
