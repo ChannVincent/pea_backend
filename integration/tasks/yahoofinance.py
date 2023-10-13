@@ -15,8 +15,6 @@ def sync():
     now = datetime.datetime.now()
     for business in businesses:
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now:
-            earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
-            integrate_earnings(business, earnings)
             cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
             integrate_cashflow(business, cashflow)
             business.last_update = now
@@ -26,7 +24,7 @@ def sync():
 def integrate_cashflow(business, cashflow):
     time_series = cashflow.get("timeSeries")
     if not time_series:
-        pass
+        return
     # annual_start_cash_position
     annual_start_cash_position = time_series.get("annualBeginningCashPosition")
     for position in annual_start_cash_position:
@@ -91,20 +89,32 @@ def integrate_cashflow(business, cashflow):
         free_cash_flow = [cash for cash in annual_free_cash_flow if cash and cash["asOfDate"].startswith(date)]
         yearly_report.free_cash_flow = free_cash_flow[0].get("reportedValue").get("raw") / CASH_MULTIPLIER if free_cash_flow else None
         yearly_report.save()
-    
-
-def integrate_earnings(business, earnings):
-    summary = earnings.get("quoteSummary")
-    if not summary:
+    # earnings
+    earnings = cashflow.get("earnings")
+    if not earnings:
         return
-    results = summary.get("result")
-    if not results:
+    earnings_chart = earnings.get("earningsChart")
+    if not earnings_chart:
         return
-    result = results[0]
-    earnings = result.get("earnings")
-    financials = earnings.get("financialsChart")
+    # quarterly reports
+    quarterly = earnings_chart.get("quarterly")
+    for quarter in quarterly:
+        composed_date = quarter.get("date")
+        if not composed_date:
+            continue
+        date = composed_date.split('Q')[1]
+        dquarter = composed_date.split('Q')[0]
+        quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=dquarter).first()
+        if not quarter_report:
+            quarter_report = QuarterReport(business=business, year=date, quarter=quarter)
+        quarter_report.earning = quarter.get("earnings").get("raw") / CASH_MULTIPLIER
+        quarter_report.revenue = quarter.get("revenue").get("raw") / CASH_MULTIPLIER
+        quarter_report.save()
     # yearly reports
-    yearly = financials.get("yearly")
+    financials_chart = earnings.get("financialsChart")
+    if not financials_chart:
+        return
+    yearly = financials_chart.get("yearly")
     for year in yearly:
         date = year.get("date")
         if not date:
@@ -115,19 +125,4 @@ def integrate_earnings(business, earnings):
         yearly_report.earning = year.get("earnings").get("raw") / CASH_MULTIPLIER
         yearly_report.revenue = year.get("revenue").get("raw") / CASH_MULTIPLIER
         yearly_report.save()
-    # quarterly reports
-    quarterly = financials.get("quarterly")
-    for quarter in quarterly:
-        composed_date = quarter.get("date")
-        if not composed_date:
-            continue
-        date = composed_date.split('Q')[1]
-        quarter = composed_date.split('Q')[0]
-        quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=quarter).first()
-        if not quarter_report:
-            quarter_report = QuarterReport(business=business, year=date, quarter=quarter)
-        quarter_report.earning = year.get("earnings").get("raw") / CASH_MULTIPLIER
-        quarter_report.revenue = year.get("revenue").get("raw") / CASH_MULTIPLIER
-        quarter_report.save()
-
-        
+    
