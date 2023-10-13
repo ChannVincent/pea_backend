@@ -44,4 +44,12 @@ class YahooFinanceAPI:
     def get_summary(self, stock, country):
         return self.get_stuff('v2/get-summary', stock, country)
         
+    # todo stock/get-recent-updates
+    # upgradeDowngradeHistory
+    # calendarEvents
+    def get_updates(self, stock, country):
+        return self.get_stuff('get-recent-updates', stock, country)
 
+    # v3/get-historical-data
+    def get_market_price(self, stock, country):
+        return self.get_stuff('v3/get-historical-data', stock, country)

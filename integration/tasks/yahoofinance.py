@@ -5,7 +5,7 @@ import datetime
 import json
 
 
-CASH_MULTIPLIER = 1000000
+CASH_MULTIPLIER = 1 * 1000 * 1000 # 1M
 TIME_BETWEEN_UPDATES = 24 * 30 # hours
 
 def sync(force=False):
@@ -15,8 +15,8 @@ def sync(force=False):
     now = datetime.datetime.now()
     for business in businesses:
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
-            cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
-            integrate_cashflow(business, cashflow)
+            # cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+            # integrate_cashflow(business, cashflow)
             summary = api.get_summary(stock=business.symbol, country=business.country_code)
             integrate_summary(business, summary)
             business.last_update = now
@@ -237,7 +237,7 @@ def integrate_cashflow(business, cashflow):
             dquarter = 2
         if month in [8,9,10]:
             dquarter = 3
-        if month in [11, 12, 1]:
+        if month in [11,12,1]:
             dquarter = 4
         quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=dquarter).first()
         if not quarter_report:
