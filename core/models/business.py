@@ -33,7 +33,46 @@ class Business(models.Model):
             'symbol': self.symbol,
             'country_code': self.country_code,
         }
-    
+
+
+class Industry(models.Model):
+    industry_key = models.CharField(default=None, max_length=256, null=True, blank=True)
+    industry = models.CharField(default=None, max_length=256, null=True, blank=True)
+
+    def __str__(self):
+        return self.industry
+
+class Sector(models.Model):
+    sector_key = models.CharField(default=None, max_length=256, null=True, blank=True)
+    sector = models.CharField(default=None, max_length=256, null=True, blank=True)
+    sector_disp = models.CharField(default=None, max_length=256, null=True, blank=True)
+
+    def __str__(self):
+        return self.sector
+
+class BusinessInfo(models.Model):
+    last_update = models.DateTimeField(auto_now=True)
+    business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    long_business_summary = models.TextField(default=None, null=True, blank=True)
+    website = models.CharField(default=None, max_length=256, null=True, blank=True)
+    country = models.CharField(default=None, max_length=256, null=True, blank=True)
+    city = models.CharField(default=None, max_length=256, null=True, blank=True)
+    full_time_employees = models.IntegerField(default=None, null=True, blank=True)
+    market_cap = models.IntegerField(default=None, null=True, blank=True)
+    industry = models.ForeignKey(Industry, default=None, null=True, blank=True, on_delete=models.DO_NOTHING)
+    sector = models.ForeignKey(Sector, default=None, null=True, blank=True, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return f"{self.business} info"
+
+class AnalystGrade(models.Model):
+    business_info = models.ForeignKey(BusinessInfo, default=None, blank=True, null=True, on_delete=models.CASCADE)
+    date = models.DateField(default=None, null=True, blank=True)
+    firm = models.CharField(default=None, max_length=256, null=True, blank=True)
+    fromGrade = models.CharField(default=None, max_length=256, null=True, blank=True)
+    toGrade = models.CharField(default=None, max_length=256, null=True, blank=True)
+    action = models.CharField(default=None, max_length=256, null=True, blank=True)
+
 
 class QuarterReport(models.Model):
     class Meta:

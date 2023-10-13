@@ -1,4 +1,4 @@
-from core.models.business import Business, YearlyReport, QuarterReport
+from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import datetime
@@ -17,8 +17,8 @@ def sync(force=False):
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
             cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
             integrate_cashflow(business, cashflow)
-            # earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
-            # integrate_earnings(business, earnings)
+            summary = api.get_summary(stock=business.symbol, country=business.country_code)
+            integrate_summary(business, summary)
             business.last_update = now
             business.save()
 
@@ -263,45 +263,42 @@ def integrate_cashflow(business, cashflow):
         quarter_report.total_cashflows_from_investing_activities = quarter.get("totalCashflowsFromInvestingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("totalCashflowsFromInvestingActivities") else None
         quarter_report.save()
 
-        
-# unused
-def integrate_earnings(business, earnings):
-    summary = earnings.get("quoteSummary")
-    if not summary:
-        return
-    results = summary.get("result")
-    if not results:
-        return
-    result = results[0]
-    earnings = result.get("earnings")
-    financials = earnings.get("financialsChart")
-    # yearly reports
-    yearly = financials.get("yearly")
-    for year in yearly:
-        date = year.get("date")
-        if not date:
-            continue
-        yearly_report = YearlyReport.objects.filter(business=business, year=date).first()
-        if not yearly_report:
-            yearly_report = YearlyReport(business=business, year=date)
-        yearly_report.earning = year.get("earnings").get("raw") / CASH_MULTIPLIER
-        yearly_report.revenue = year.get("revenue").get("raw") / CASH_MULTIPLIER
-        yearly_report.save()
-    # quarterly reports
-    quarterly = financials.get("quarterly")
-    for quarter in quarterly:
-        composed_date = quarter.get("date")
-        if not composed_date:
-            continue
-        date = composed_date.split('Q')[1]
-        dquarter = composed_date.split('Q')[0]
-        quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=dquarter).first()
-        if not quarter_report:
-            quarter_report = QuarterReport(business=business, year=date, quarter=dquarter)
-        quarter_report.earning = quarter.get("earnings").get("raw") / CASH_MULTIPLIER
-        quarter_report.revenue = quarter.get("revenue").get("raw") / CASH_MULTIPLIER
-        if quarter_report.earning == 0 and quarter_report.revenue == 0:
-            continue
-        quarter_report.save()
 
-        
+def integrate_summary(business, summary):
+    profile = summary.get("summaryProfile")
+    business_info = BusinessInfo.objects.filter(business=business).last()
+    if not business_info:
+        business_info = BusinessInfo(business=business)
+    business_info.long_business_summary = profile.get("longBusinessSummary")
+    business_info.website = profile.get("website")
+    business_info.country = profile.get("country")
+    business_info.city = profile.get("city")
+    business_info.full_time_employees = profile.get("fullTimeEmployees")
+    price = summary.get("price")
+    if price:
+        business_info.market_cap = price.get("marketCap").get("raw") / CASH_MULTIPLIER if price.get("marketCap") else None
+    # industry
+    industry_key = profile.get("industryKey")
+    if not industry_key:
+        return
+    industry = Industry.objects.filter(industry_key=industry_key).first()
+    if not industry:
+        industry = Industry(industry_key=industry_key)
+    industry.industry = profile.get("industryDisp")
+    industry.save()
+    business_info.industry = industry
+    # sector
+    sector_key = profile.get("sectorKey")
+    if not sector_key:
+        return
+    sector = Sector.objects.filter(sector_key=sector_key).first()
+    if not sector:
+        sector = Sector(sector_key=sector_key)
+    sector.sector_disp = profile.get("sectorDisp")
+    sector.sector = profile.get("sector")
+    sector.save()
+    business_info.sector = sector
+    business_info.save()
+
+    
+    

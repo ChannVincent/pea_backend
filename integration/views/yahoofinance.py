@@ -32,11 +32,6 @@ class YahooFinanceAPI:
         debug.save()
         return body
     
-    # todo summary v3/get-profile
-    # todo avis analystes v2/get-analysis
-    # todo financials v2/get-financials
-    # todo v2/get-balance-sheet
-    
     # CA & bénéfices net
     def get_earnings(self, stock, country):
         return self.get_stuff('get-earnings', stock, country)
@@ -44,4 +39,9 @@ class YahooFinanceAPI:
     # cashflow v2/get-cash-flow
     def get_cashflow(self, stock, country):
         return self.get_stuff('v2/get-cash-flow', stock, country)
+    
+    # summary
+    def get_summary(self, stock, country):
+        return self.get_stuff('v2/get-summary', stock, country)
+        
 
