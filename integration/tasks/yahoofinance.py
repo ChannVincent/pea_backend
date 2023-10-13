@@ -8,13 +8,13 @@ import json
 CASH_MULTIPLIER = 1000000
 TIME_BETWEEN_UPDATES = 24 * 30 # hours
 
-def sync():
+def sync(force=False):
     integration = YahooFinanceIntegration.objects.first()
     api = YahooFinanceAPI(integration.api_key, integration.api_host)
     businesses = Business.objects.all()
     now = datetime.datetime.now()
     for business in businesses:
-        if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now:
+        if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
             cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
             integrate_cashflow(business, cashflow)
             # earnings = api.get_earnings(stock=business.symbol, country=business.country_code)
@@ -112,7 +112,7 @@ def integrate_cashflow(business, cashflow):
         if quarter_report.earning == 0 and quarter_report.revenue == 0:
             continue
         quarter_report.save()
-    # yearly reports
+    # yearly earnings & revenue
     yearly = financials_chart.get("yearly")
     for year in yearly:
         date = year.get("date")
@@ -124,8 +124,147 @@ def integrate_cashflow(business, cashflow):
         yearly_report.earning = year.get("earnings").get("raw") / CASH_MULTIPLIER
         yearly_report.revenue = year.get("revenue").get("raw") / CASH_MULTIPLIER
         yearly_report.save()
+    # yearly balance sheet
+    balance_sheets_history = cashflow.get("balanceSheetHistory")
+    if not balance_sheets_history:
+        return
+    balance_sheets = balance_sheets_history.get("balanceSheetStatements")
+    for balance in balance_sheets:
+        endDate = balance.get("endDate").get("fmt")
+        if not endDate:
+            continue
+        date = endDate.split("-")[0]
+        yearly_report = YearlyReport.objects.filter(business=business, year=date).first()
+        if not yearly_report:
+            yearly_report = YearlyReport(business=business, year=date)
+        yearly_report.cash = balance.get("cash").get("raw") / CASH_MULTIPLIER if balance.get("cash") else None
+        yearly_report.inventory = balance.get("inventory").get("raw") / CASH_MULTIPLIER if balance.get("inventory") else None
+        yearly_report.total_assets = balance.get("totalAssets").get("raw") / CASH_MULTIPLIER if balance.get("totalAssets") else None
+        yearly_report.total_current_assets = balance.get("totalCurrentAssets").get("raw") / CASH_MULTIPLIER if balance.get("totalCurrentAssets") else None
+        yearly_report.treasury_stock = balance.get("treasuryStock").get("raw") / CASH_MULTIPLIER if balance.get("treasuryStock") else None
+        yearly_report.intangible_assets = balance.get("intangibleAssets").get("raw") / CASH_MULTIPLIER if balance.get("intangibleAssets") else None
+        yearly_report.net_tangible_assets = balance.get("netTangibleAssets").get("raw") / CASH_MULTIPLIER if balance.get("netTangibleAssets") else None
+        yearly_report.total_current_liabilities = balance.get("totalCurrentLiabilities").get("raw") / CASH_MULTIPLIER if balance.get("totalCurrentLiabilities") else None
+        yearly_report.short_long_term_debt = balance.get("shortLongTermDebt").get("raw") / CASH_MULTIPLIER if balance.get("shortLongTermDebt") else None
+        yearly_report.long_term_debt = balance.get("longTermDebt").get("raw") / CASH_MULTIPLIER if balance.get("longTermDebt") else None
+        yearly_report.long_term_investments = balance.get("longTermInvestments").get("raw") / CASH_MULTIPLIER if balance.get("longTermInvestments") else None
+        yearly_report.short_term_investments = balance.get("shortTermInvestments").get("raw") / CASH_MULTIPLIER if balance.get("shortTermInvestments") else None
+        yearly_report.save()
+    # quarter balance sheet
+    quarter_balance_sheets_history = cashflow.get("balanceSheetHistoryQuarterly")
+    if not quarter_balance_sheets_history:
+        return
+    quarter_balance_sheets = quarter_balance_sheets_history.get("balanceSheetStatements")
+    for balance in quarter_balance_sheets:
+        endDate = balance.get("endDate").get("fmt")
+        if not endDate:
+            continue
+        date = endDate.split("-")[0]
+        month = int(endDate.split("-")[1])
+        quarter = 0
+        if month in [2,3,4]:
+            quarter = 1
+        if month in [5,6,7]:
+            quarter = 2
+        if month in [8,9,10]:
+            quarter = 3
+        if month in [11, 12, 1]:
+            quarter = 4
+        quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=quarter).first()
+        if not quarter_report:
+            quarter_report = QuarterReport(business=business, year=date, quarter=quarter)
+        quarter_report.cash = balance.get("cash").get("raw") / CASH_MULTIPLIER if balance.get("cash") else None
+        quarter_report.inventory = balance.get("inventory").get("raw") / CASH_MULTIPLIER if balance.get("inventory") else None
+        quarter_report.total_assets = balance.get("totalAssets").get("raw") / CASH_MULTIPLIER if balance.get("totalAssets") else None
+        quarter_report.total_current_assets = balance.get("totalCurrentAssets").get("raw") / CASH_MULTIPLIER if balance.get("totalCurrentAssets") else None
+        quarter_report.treasury_stock = balance.get("treasuryStock").get("raw") / CASH_MULTIPLIER if balance.get("treasuryStock") else None
+        quarter_report.intangible_assets = balance.get("intangibleAssets").get("raw") / CASH_MULTIPLIER if balance.get("intangibleAssets") else None
+        quarter_report.net_tangible_assets = balance.get("netTangibleAssets").get("raw") / CASH_MULTIPLIER if balance.get("netTangibleAssets") else None
+        quarter_report.total_current_liabilities = balance.get("totalCurrentLiabilities").get("raw") / CASH_MULTIPLIER if balance.get("totalCurrentLiabilities") else None
+        quarter_report.short_long_term_debt = balance.get("shortLongTermDebt").get("raw") / CASH_MULTIPLIER if balance.get("shortLongTermDebt") else None
+        quarter_report.long_term_debt = balance.get("longTermDebt").get("raw") / CASH_MULTIPLIER if balance.get("longTermDebt") else None
+        quarter_report.long_term_investments = balance.get("longTermInvestments").get("raw") / CASH_MULTIPLIER if balance.get("longTermInvestments") else None
+        quarter_report.short_term_investments = balance.get("shortTermInvestments").get("raw") / CASH_MULTIPLIER if balance.get("shortTermInvestments") else None
+        quarter_report.save()
+    # yearly cashflow
+    cashflow_history = cashflow.get("cashflowStatementHistory")
+    if not cashflow_history:
+        return
+    yearly_cashflow = cashflow_history.get("cashflowStatements")
+    for year in yearly_cashflow:
+        endDate = year.get("endDate").get("fmt")
+        if not endDate:
+            continue
+        date = endDate.split("-")[0]
+        yearly_report = YearlyReport.objects.filter(business=business, year=date).first()
+        if not yearly_report:
+            yearly_report = YearlyReport(business=business, year=date)
+        yearly_report.net_income = year.get("netIncome").get("raw") / CASH_MULTIPLIER if year.get("netIncome") else None
+        yearly_report.investments = year.get("investments").get("raw") / CASH_MULTIPLIER if year.get("investments") else None
+        yearly_report.change_in_cash = year.get("changeInCash").get("raw") / CASH_MULTIPLIER if year.get("changeInCash") else None
+        yearly_report.depreciation = year.get("depreciation").get("raw") / CASH_MULTIPLIER if year.get("depreciation") else None
+        yearly_report.dividends_paid = year.get("dividendsPaid").get("raw") / CASH_MULTIPLIER if year.get("dividendsPaid") else None
+        yearly_report.net_borrowings = year.get("netBorrowings").get("raw") / CASH_MULTIPLIER if year.get("netBorrowings") else None
+        yearly_report.change_to_inventory = year.get("changeToInventory").get("raw") / CASH_MULTIPLIER if year.get("changeToInventory") else None
+        yearly_report.change_to_netincome = year.get("changeToNetincome").get("raw") / CASH_MULTIPLIER if year.get("changeToNetincome") else None
+        yearly_report.repurchase_of_stock = year.get("repurchaseOfStock").get("raw") / CASH_MULTIPLIER if year.get("repurchaseOfStock") else None
+        yearly_report.capital_expenditures = year.get("capitalExpenditures").get("raw") / CASH_MULTIPLIER if year.get("capitalExpenditures") else None
+        yearly_report.change_to_liabilities = year.get("changeToLiabilities").get("raw") / CASH_MULTIPLIER if year.get("changeToLiabilities") else None
+        yearly_report.effect_of_exchange_rate = year.get("effectOfExchangeRate").get("raw") / CASH_MULTIPLIER if year.get("effectOfExchangeRate") else None
+        yearly_report.change_to_account_receivables = year.get("changeToAccountReceivables").get("raw") / CASH_MULTIPLIER if year.get("changeToAccountReceivables") else None
+        yearly_report.change_tooperating_activities = year.get("changeToOperatingActivities").get("raw") / CASH_MULTIPLIER if year.get("changeToOperatingActivities") else None
+        yearly_report.total_cash_from_financing_activities = year.get("totalCashFromFinancingActivities").get("raw") / CASH_MULTIPLIER if year.get("totalCashFromFinancingActivities") else None
+        yearly_report.total_cash_from_operating_activities = year.get("totalCashFromOperatingActivities").get("raw") / CASH_MULTIPLIER if year.get("totalCashFromOperatingActivities") else None
+        yearly_report.other_cashflows_from_financing_activities = year.get("otherCashflowsFromFinancingActivities").get("raw") / CASH_MULTIPLIER if year.get("otherCashflowsFromFinancingActivities") else None
+        yearly_report.other_cashflows_from_investing_activities = year.get("otherCashflowsFromInvestingActivities").get("raw") / CASH_MULTIPLIER if year.get("otherCashflowsFromInvestingActivities") else None
+        yearly_report.total_cashflows_from_investing_activities = year.get("totalCashflowsFromInvestingActivities").get("raw") / CASH_MULTIPLIER if year.get("totalCashflowsFromInvestingActivities") else None
+        yearly_report.save()
+    # quarterly cashflow
+    quarter_cashflow_history = cashflow.get("cashflowStatementHistoryQuarterly")
+    if not quarter_cashflow_history:
+        return
+    quarter_cashflow = quarter_cashflow_history.get("cashflowStatements")
+    for quarter in quarter_cashflow:
+        endDate = quarter.get("endDate").get("fmt")
+        if not endDate:
+            continue
+        date = endDate.split("-")[0]
+        month = int(endDate.split("-")[1])
+        dquarter = 0
+        if month in [2,3,4]:
+            dquarter = 1
+        if month in [5,6,7]:
+            dquarter = 2
+        if month in [8,9,10]:
+            dquarter = 3
+        if month in [11, 12, 1]:
+            dquarter = 4
+        quarter_report = QuarterReport.objects.filter(business=business, year=date, quarter=dquarter).first()
+        if not quarter_report:
+            quarter_report = QuarterReport(business=business, year=date, quarter=quarter)
+        quarter_report.net_income = quarter.get("netIncome").get("raw") / CASH_MULTIPLIER if quarter.get("netIncome") else None
+        quarter_report.investments = quarter.get("investments").get("raw") / CASH_MULTIPLIER if quarter.get("investments") else None
+        quarter_report.change_in_cash = quarter.get("changeInCash").get("raw") / CASH_MULTIPLIER if quarter.get("changeInCash") else None
+        quarter_report.depreciation = quarter.get("depreciation").get("raw") / CASH_MULTIPLIER if quarter.get("depreciation") else None
+        quarter_report.dividends_paid = quarter.get("dividendsPaid").get("raw") / CASH_MULTIPLIER if quarter.get("dividendsPaid") else None
+        quarter_report.net_borrowings = quarter.get("netBorrowings").get("raw") / CASH_MULTIPLIER if quarter.get("netBorrowings") else None
+        quarter_report.change_to_inventory = quarter.get("changeToInventory").get("raw") / CASH_MULTIPLIER if quarter.get("changeToInventory") else None
+        quarter_report.change_to_netincome = quarter.get("changeToNetincome").get("raw") / CASH_MULTIPLIER if quarter.get("changeToNetincome") else None
+        quarter_report.repurchase_of_stock = quarter.get("repurchaseOfStock").get("raw") / CASH_MULTIPLIER if quarter.get("repurchaseOfStock") else None
+        quarter_report.capital_expenditures = quarter.get("capitalExpenditures").get("raw") / CASH_MULTIPLIER if quarter.get("capitalExpenditures") else None
+        quarter_report.change_to_liabilities = quarter.get("changeToLiabilities").get("raw") / CASH_MULTIPLIER if quarter.get("changeToLiabilities") else None
+        quarter_report.effect_of_exchange_rate = quarter.get("effectOfExchangeRate").get("raw") / CASH_MULTIPLIER if quarter.get("effectOfExchangeRate") else None
+        quarter_report.change_to_account_receivables = quarter.get("changeToAccountReceivables").get("raw") / CASH_MULTIPLIER if quarter.get("changeToAccountReceivables") else None
+        quarter_report.change_tooperating_activities = quarter.get("changeToOperatingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("changeToOperatingActivities") else None
+        quarter_report.total_cash_from_financing_activities = quarter.get("totalCashFromFinancingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("totalCashFromFinancingActivities") else None
+        quarter_report.total_cash_from_operating_activities = quarter.get("totalCashFromOperatingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("totalCashFromOperatingActivities") else None
+        quarter_report.other_cashflows_from_financing_activities = quarter.get("otherCashflowsFromFinancingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("otherCashflowsFromFinancingActivities") else None
+        quarter_report.other_cashflows_from_investing_activities = quarter.get("otherCashflowsFromInvestingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("otherCashflowsFromInvestingActivities") else None
+        quarter_report.total_cashflows_from_investing_activities = quarter.get("totalCashflowsFromInvestingActivities").get("raw") / CASH_MULTIPLIER if quarter.get("totalCashflowsFromInvestingActivities") else None
+        quarter_report.save()
 
-
+        
+# unused
 def integrate_earnings(business, earnings):
     summary = earnings.get("quoteSummary")
     if not summary:
