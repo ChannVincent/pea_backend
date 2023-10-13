@@ -1,4 +1,4 @@
-from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport
+from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import datetime
@@ -299,6 +299,23 @@ def integrate_summary(business, summary):
     sector.save()
     business_info.sector = sector
     business_info.save()
-
+    # upgrade downgrade : nothing for french industry ?
+    upgrade_downgrade_history = summary.get("upgradeDowngradeHistory")
+    if not upgrade_downgrade_history:
+        return
+    grade_history = upgrade_downgrade_history.get("history")
+    for grade in grade_history:
+        timestamp = grade.get("epochGradeDate")
+        if not timestamp:
+            continue
+        date = datetime.datetime.fromtimestamp(timestamp)
+        analyst_grade = AnalystGrade.objects.filter(date=date, business_info=business_info)
+        if not analyst_grade:
+            analyst_grade = AnalystGrade(date=date, business_info=business_info)
+        analyst_grade.firm = grade.get("firm")
+        analyst_grade.fromGrade = grade.get("fromGrade")
+        analyst_grade.toGrade = grade.get("toGrade")
+        analyst_grade.action = grade.get("action")
+        analyst_grade.save()
     
     

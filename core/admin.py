@@ -31,6 +31,7 @@ class BusinessAdmin(admin.ModelAdmin):
 @admin.register(BusinessInfo)
 class BusinessInfoAdmin(admin.ModelAdmin):
     list_display = ("business", "last_update")
+    inlines = [AnalystGradeInline]
 
 @admin.register(DebugApiLog)
 class DebugApiLogAdmin(admin.ModelAdmin):
