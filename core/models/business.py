@@ -42,6 +42,7 @@ class Industry(models.Model):
     def __str__(self):
         return self.industry
 
+
 class Sector(models.Model):
     sector_key = models.CharField(default=None, max_length=256, null=True, blank=True)
     sector = models.CharField(default=None, max_length=256, null=True, blank=True)
@@ -49,6 +50,7 @@ class Sector(models.Model):
 
     def __str__(self):
         return self.sector
+
 
 class BusinessInfo(models.Model):
     last_update = models.DateTimeField(auto_now=True)
@@ -65,14 +67,25 @@ class BusinessInfo(models.Model):
     def __str__(self):
         return f"{self.business} info"
 
+
+class GradeFirm(models.Model):
+    name = models.CharField(default=None, max_length=256, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+    
+
 class AnalystGrade(models.Model):
     business_info = models.ForeignKey(BusinessInfo, default=None, blank=True, null=True, on_delete=models.CASCADE)
     date = models.DateField(default=None, null=True, blank=True)
-    firm = models.CharField(default=None, max_length=256, null=True, blank=True)
+    firm = models.ForeignKey(GradeFirm, default=None, null=True, blank=True, on_delete=models.DO_NOTHING)
     fromGrade = models.CharField(default=None, max_length=256, null=True, blank=True)
     toGrade = models.CharField(default=None, max_length=256, null=True, blank=True)
     action = models.CharField(default=None, max_length=256, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.firm}: grade {self.toGrade}"
+    
 
 class QuarterReport(models.Model):
     class Meta:

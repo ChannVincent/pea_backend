@@ -46,7 +46,7 @@ class YahooFinanceAPI:
         
     # todo stock/get-recent-updates
     # upgradeDowngradeHistory
-    # calendarEvents
+    # calendarEvents ?
     def get_updates(self, stock, country):
         return self.get_stuff('get-recent-updates', stock, country)
 

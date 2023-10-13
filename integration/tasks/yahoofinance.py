@@ -1,4 +1,4 @@
-from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade
+from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import datetime
@@ -15,10 +15,12 @@ def sync(force=False):
     now = datetime.datetime.now()
     for business in businesses:
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
-            # cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
-            # integrate_cashflow(business, cashflow)
+            cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+            integrate_cashflow(business, cashflow)
             summary = api.get_summary(stock=business.symbol, country=business.country_code)
             integrate_summary(business, summary)
+            # recent_updates = api.get_updates(stock=business.symbol, country=business.country_code)
+            # integrate_recent_updates(business, recent_updates)
             business.last_update = now
             business.save()
 
@@ -304,6 +306,9 @@ def integrate_summary(business, summary):
     if not upgrade_downgrade_history:
         return
     grade_history = upgrade_downgrade_history.get("history")
+    business_info = BusinessInfo.objects.filter(business=business).first()
+    if not business_info:
+        return
     for grade in grade_history:
         timestamp = grade.get("epochGradeDate")
         if not timestamp:
@@ -312,10 +317,48 @@ def integrate_summary(business, summary):
         analyst_grade = AnalystGrade.objects.filter(date=date, business_info=business_info)
         if not analyst_grade:
             analyst_grade = AnalystGrade(date=date, business_info=business_info)
-        analyst_grade.firm = grade.get("firm")
+        grade_firm = GradeFirm.objects.filter(name=grade.get("firm"))
+        if not grade_firm:
+            grade_firm = GradeFirm(name=grade.get("firm"))
+        analyst_grade.firm = grade_firm
         analyst_grade.fromGrade = grade.get("fromGrade")
         analyst_grade.toGrade = grade.get("toGrade")
         analyst_grade.action = grade.get("action")
         analyst_grade.save()
-    
-    
+
+
+def integrate_recent_updates(business, recent_updates):
+    summary = recent_updates.get("quoteSummary")
+    if not summary:
+        return
+    result = summary.get("result")
+    if not result:
+        return
+    # grades
+    upgrade_downgrade_history = result[0].get("upgradeDowngradeHistory")
+    if not upgrade_downgrade_history:
+        return
+    grade_history = upgrade_downgrade_history.get("history")
+    business_info = BusinessInfo.objects.filter(business=business).first()
+    if not business_info:
+        return
+    for grade in grade_history:
+        timestamp = grade.get("epochGradeDate")
+        if not timestamp:
+            continue
+        date = datetime.datetime.fromtimestamp(timestamp)
+        analyst_grade = AnalystGrade.objects.filter(date=date, business_info=business_info)
+        if not analyst_grade:
+            analyst_grade = AnalystGrade(date=date, business_info=business_info)
+        grade_firm = GradeFirm.objects.filter(name=grade.get("firm"))
+        if not grade_firm:
+            grade_firm = GradeFirm(name=grade.get("firm"))
+        analyst_grade.firm = grade_firm
+        analyst_grade.fromGrade = grade.get("fromGrade")
+        analyst_grade.toGrade = grade.get("toGrade")
+        analyst_grade.action = grade.get("action")
+        analyst_grade.save()
+        
+
+def integrate_market_price(business, market_price):
+    pass
