@@ -27,12 +27,14 @@ class Business(models.Model):
 
     def is_updated(self):
         now = datetime.datetime.now()
-        if self.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) > now:
+        if self.last_update and self.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) > now:
             return True
         return False
     
     def updated(self):
-        return self.last_update.strftime("%Y-%m-%d")
+        if self.last_update:
+            return self.last_update.strftime("%Y-%m-%d")
+        return None
 
     def __str__(self):
         return self.name
