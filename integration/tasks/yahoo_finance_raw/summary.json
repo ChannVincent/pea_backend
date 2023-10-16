@@ -1,0 +1,2686 @@
+{
+    "defaultKeyStatistics": {
+      "annualHoldingsTurnover": {},
+      "enterpriseToRevenue": {
+        "raw": 0.057,
+        "fmt": "0.06"
+      },
+      "beta3Year": {},
+      "profitMargins": {
+        "raw": -0.11062,
+        "fmt": "-11.06%"
+      },
+      "enterpriseToEbitda": {
+        "raw": -1.954,
+        "fmt": "-1.95"
+      },
+      "52WeekChange": {
+        "raw": -0.37391305,
+        "fmt": "-37.39%"
+      },
+      "morningStarRiskRating": {},
+      "forwardEps": {
+        "raw": -0.15,
+        "fmt": "-0.15"
+      },
+      "revenueQuarterlyGrowth": {},
+      "sharesOutstanding": {
+        "raw": 407908992,
+        "fmt": "407.91M",
+        "longFmt": "407,908,992"
+      },
+      "fundInceptionDate": {},
+      "annualReportExpenseRatio": {},
+      "totalAssets": {},
+      "bookValue": {
+        "raw": 1.394,
+        "fmt": "1.39"
+      },
+      "sharesShort": {
+        "raw": 15868959,
+        "fmt": "15.87M",
+        "longFmt": "15,868,959"
+      },
+      "sharesPercentSharesOut": {
+        "raw": 0.038900003,
+        "fmt": "3.89%"
+      },
+      "fundFamily": null,
+      "lastFiscalYearEnd": {
+        "raw": 1672444800,
+        "fmt": "2022-12-31"
+      },
+      "heldPercentInstitutions": {
+        "raw": 0.29917,
+        "fmt": "29.92%"
+      },
+      "netIncomeToCommon": {
+        "raw": -38304000,
+        "fmt": "-38.3M",
+        "longFmt": "-38,304,000"
+      },
+      "trailingEps": {
+        "raw": -0.08,
+        "fmt": "-0.0800"
+      },
+      "lastDividendValue": {},
+      "SandP52WeekChange": {
+        "raw": 0.21393383,
+        "fmt": "21.39%"
+      },
+      "priceToBook": {
+        "raw": 0.5134146,
+        "fmt": "0.51"
+      },
+      "heldPercentInsiders": {
+        "raw": 0.00521,
+        "fmt": "0.52%"
+      },
+      "nextFiscalYearEnd": {
+        "raw": 1703980800,
+        "fmt": "2023-12-31"
+      },
+      "yield": {},
+      "mostRecentQuarter": {
+        "raw": 1688083200,
+        "fmt": "2023-06-30"
+      },
+      "shortRatio": {
+        "raw": 10.02,
+        "fmt": "10.02"
+      },
+      "sharesShortPreviousMonthDate": {
+        "raw": 1693440000,
+        "fmt": "2023-08-31"
+      },
+      "floatShares": {
+        "raw": 376194257,
+        "fmt": "376.19M",
+        "longFmt": "376,194,257"
+      },
+      "beta": {
+        "raw": 2.083995,
+        "fmt": "2.08"
+      },
+      "enterpriseValue": {
+        "raw": 19580120,
+        "fmt": "19.58M",
+        "longFmt": "19,580,120"
+      },
+      "priceHint": {
+        "raw": 4,
+        "fmt": "4",
+        "longFmt": "4"
+      },
+      "threeYearAverageReturn": {},
+      "lastSplitDate": {
+        "raw": 1200614400,
+        "fmt": "2008-01-18"
+      },
+      "lastSplitFactor": "1:10",
+      "legalType": null,
+      "lastDividendDate": {},
+      "morningStarOverallRating": {},
+      "earningsQuarterlyGrowth": {},
+      "priceToSalesTrailing12Months": {},
+      "dateShortInterest": {
+        "raw": 1695945600,
+        "fmt": "2023-09-29"
+      },
+      "pegRatio": {
+        "raw": -0.11,
+        "fmt": "-0.11"
+      },
+      "ytdReturn": {},
+      "forwardPE": {
+        "raw": -4.7713327,
+        "fmt": "-4.77"
+      },
+      "maxAge": 1,
+      "lastCapGain": {},
+      "shortPercentOfFloat": {
+        "raw": 0.039,
+        "fmt": "3.90%"
+      },
+      "sharesShortPriorMonth": {
+        "raw": 16502052,
+        "fmt": "16.5M",
+        "longFmt": "16,502,052"
+      },
+      "impliedSharesOutstanding": {
+        "raw": 407908992,
+        "fmt": "407.91M",
+        "longFmt": "407,908,992"
+      },
+      "category": null,
+      "fiveYearAverageReturn": {}
+    },
+    "details": {},
+    "summaryProfile": {
+      "industryDisp": "Drug Manufacturers - General",
+      "zip": "112-114",
+      "industryKey": "drug-manufacturers-general",
+      "sector": "Healthcare",
+      "sectorDisp": "Healthcare",
+      "fullTimeEmployees": 365,
+      "longBusinessSummary": "Amarin Corporation plc, a pharmaceutical company, engages in the development and commercialization of therapeutics for the treatment of cardiovascular diseases in the United States, European countries, Canada, Lebanon, and the United Arab Emirates. It offers VASCEPA, a prescription-only omega-3 fatty acid product, used as an adjunct to diet for reducing triglyceride levels in adult patients with severe hypertriglyceridemia. The company sells its products principally to wholesalers and specialty pharmacy providers. It has a collaboration with Mochida Pharmaceutical Co., Ltd. to develop and commercialize drug products and indications based on the active pharmaceutical ingredient in Vascepa. The company was formerly known as Ethical Holdings plc and changed its name to Amarin Corporation plc in 1999. Amarin Corporation plc was incorporated in 1989 and is headquartered in Dublin, Ireland.",
+      "city": "Dublin",
+      "phone": "353 0 166 99020",
+      "country": "Ireland",
+      "sectorKey": "healthcare",
+      "companyOfficers": [],
+      "website": "https://www.amarincorp.com",
+      "maxAge": 86400,
+      "address1": "Iconic Offices, The Greenway",
+      "industry": "Drug Manufacturers - General",
+      "address2": "Block C Ardilaun Court St Stephens Green"
+    },
+    "recommendationTrend": {
+      "trend": [
+        {
+          "period": "0m",
+          "strongBuy": 2,
+          "buy": 3,
+          "hold": 0,
+          "sell": 0,
+          "strongSell": 0
+        },
+        {
+          "period": "-1m",
+          "strongBuy": 1,
+          "buy": 1,
+          "hold": 2,
+          "sell": 1,
+          "strongSell": 0
+        },
+        {
+          "period": "-2m",
+          "strongBuy": 1,
+          "buy": 1,
+          "hold": 2,
+          "sell": 1,
+          "strongSell": 0
+        },
+        {
+          "period": "-3m",
+          "strongBuy": 2,
+          "buy": 3,
+          "hold": 0,
+          "sell": 0,
+          "strongSell": 0
+        }
+      ],
+      "maxAge": 86400
+    },
+    "financialsTemplate": {
+      "code": "N",
+      "maxAge": 1
+    },
+    "majorDirectHolders": {
+      "holders": [],
+      "maxAge": 1
+    },
+    "earnings": {
+      "maxAge": 86400,
+      "earningsChart": {
+        "quarterly": [
+          {
+            "date": "3Q2022",
+            "actual": {
+              "raw": -0.01,
+              "fmt": "-0.01"
+            },
+            "estimate": {
+              "raw": -0.06,
+              "fmt": "-0.06"
+            }
+          },
+          {
+            "date": "4Q2022",
+            "actual": {
+              "raw": 0,
+              "fmt": "0.00"
+            },
+            "estimate": {
+              "raw": 0,
+              "fmt": "0.00"
+            }
+          },
+          {
+            "date": "1Q2023",
+            "actual": {
+              "raw": -0.04,
+              "fmt": "-0.04"
+            },
+            "estimate": {
+              "raw": -0.03,
+              "fmt": "-0.03"
+            }
+          },
+          {
+            "date": "2Q2023",
+            "actual": {
+              "raw": -0.04,
+              "fmt": "-0.04"
+            },
+            "estimate": {
+              "raw": -0.03,
+              "fmt": "-0.03"
+            }
+          }
+        ],
+        "currentQuarterEstimate": {
+          "raw": -0.04,
+          "fmt": "-0.04"
+        },
+        "currentQuarterEstimateDate": "3Q",
+        "currentQuarterEstimateYear": 2023,
+        "earningsDate": [
+          {
+            "raw": 1698386401,
+            "fmt": "2023-10-27"
+          },
+          {
+            "raw": 1698818401,
+            "fmt": "2023-11-01"
+          }
+        ]
+      },
+      "financialsChart": {
+        "yearly": [
+          {
+            "date": 2019,
+            "revenue": {
+              "raw": 429755000,
+              "fmt": "429.75M",
+              "longFmt": "429,755,000"
+            },
+            "earnings": {
+              "raw": -22645000,
+              "fmt": "-22.64M",
+              "longFmt": "-22,645,000"
+            }
+          },
+          {
+            "date": 2020,
+            "revenue": {
+              "raw": 614060000,
+              "fmt": "614.06M",
+              "longFmt": "614,060,000"
+            },
+            "earnings": {
+              "raw": -18000000,
+              "fmt": "-18M",
+              "longFmt": "-18,000,000"
+            }
+          },
+          {
+            "date": 2021,
+            "revenue": {
+              "raw": 583187000,
+              "fmt": "583.19M",
+              "longFmt": "583,187,000"
+            },
+            "earnings": {
+              "raw": 7729000,
+              "fmt": "7.73M",
+              "longFmt": "7,729,000"
+            }
+          },
+          {
+            "date": 2022,
+            "revenue": {
+              "raw": 369193000,
+              "fmt": "369.19M",
+              "longFmt": "369,193,000"
+            },
+            "earnings": {
+              "raw": -105803000,
+              "fmt": "-105.8M",
+              "longFmt": "-105,803,000"
+            }
+          }
+        ],
+        "quarterly": [
+          {
+            "date": "3Q2022",
+            "revenue": {
+              "raw": 89878000,
+              "fmt": "89.88M",
+              "longFmt": "89,878,000"
+            },
+            "earnings": {
+              "raw": -5140000,
+              "fmt": "-5.14M",
+              "longFmt": "-5,140,000"
+            }
+          },
+          {
+            "date": "4Q2022",
+            "revenue": {
+              "raw": 90245000,
+              "fmt": "90.25M",
+              "longFmt": "90,245,000"
+            },
+            "earnings": {
+              "raw": 856000,
+              "fmt": "856k",
+              "longFmt": "856,000"
+            }
+          },
+          {
+            "date": "1Q2023",
+            "revenue": {
+              "raw": 85975000,
+              "fmt": "85.97M",
+              "longFmt": "85,975,000"
+            },
+            "earnings": {
+              "raw": -16460000,
+              "fmt": "-16.46M",
+              "longFmt": "-16,460,000"
+            }
+          },
+          {
+            "date": "2Q2023",
+            "revenue": {
+              "raw": 0,
+              "fmt": null,
+              "longFmt": "0"
+            },
+            "earnings": {
+              "raw": -17560000,
+              "fmt": "-17.56M",
+              "longFmt": "-17,560,000"
+            }
+          }
+        ]
+      },
+      "financialCurrency": "USD"
+    },
+    "price": {
+      "quoteSourceName": "Delayed Quote",
+      "regularMarketOpen": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "averageDailyVolume3Month": {
+        "raw": 2453459,
+        "fmt": "2.45M",
+        "longFmt": "2,453,459"
+      },
+      "exchange": "NGM",
+      "regularMarketTime": 1697140801,
+      "volume24Hr": {},
+      "regularMarketDayHigh": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "shortName": "Amarin Corporation plc",
+      "averageDailyVolume10Day": {
+        "raw": 1573110,
+        "fmt": "1.57M",
+        "longFmt": "1,573,110"
+      },
+      "longName": "Amarin Corporation plc",
+      "regularMarketChange": {
+        "raw": -0.0715,
+        "fmt": "-0.0715"
+      },
+      "currencySymbol": "$",
+      "regularMarketPreviousClose": {
+        "raw": 0.7872,
+        "fmt": "0.7872"
+      },
+      "postMarketTime": 1697153511,
+      "preMarketPrice": {},
+      "exchangeDataDelayedBy": 0,
+      "toCurrency": null,
+      "postMarketChange": {
+        "raw": 0.009300053,
+        "fmt": "0.01"
+      },
+      "postMarketPrice": {
+        "raw": 0.725,
+        "fmt": "0.7250"
+      },
+      "exchangeName": "NasdaqGM",
+      "preMarketChange": {},
+      "circulatingSupply": {},
+      "regularMarketDayLow": {
+        "raw": 0.7083,
+        "fmt": "0.7083"
+      },
+      "priceHint": {
+        "raw": 4,
+        "fmt": "4",
+        "longFmt": "4"
+      },
+      "currency": "USD",
+      "regularMarketPrice": {
+        "raw": 0.7157,
+        "fmt": "0.7157"
+      },
+      "regularMarketVolume": {
+        "raw": 4731624,
+        "fmt": "4.73M",
+        "longFmt": "4,731,624.00"
+      },
+      "lastMarket": null,
+      "regularMarketSource": "FREE_REALTIME",
+      "openInterest": {},
+      "marketState": "PREPRE",
+      "underlyingSymbol": null,
+      "marketCap": {
+        "raw": 291940448,
+        "fmt": "291.94M",
+        "longFmt": "291,940,448.00"
+      },
+      "quoteType": "EQUITY",
+      "volumeAllCurrencies": {},
+      "postMarketSource": "DELAYED",
+      "strikePrice": {},
+      "symbol": "AMRN",
+      "postMarketChangePercent": {
+        "raw": 0.012994346,
+        "fmt": "1.30%"
+      },
+      "preMarketSource": "FREE_REALTIME",
+      "maxAge": 1,
+      "fromCurrency": null,
+      "regularMarketChangePercent": {
+        "raw": -0.09082827,
+        "fmt": "-9.08%"
+      }
+    },
+    "fundOwnership": {
+      "maxAge": 1,
+      "ownershipList": [
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Northern Lights Fd Tr-13D Activist Fd",
+          "pctHeld": {
+            "raw": 0.0385,
+            "fmt": "3.85%"
+          },
+          "position": {
+            "raw": 3808100,
+            "fmt": "3.81M",
+            "longFmt": "3,808,100"
+          },
+          "value": {
+            "raw": 2725457,
+            "fmt": "2.73M",
+            "longFmt": "2,725,457"
+          },
+          "pctChange": {
+            "raw": -0.012999999,
+            "fmt": "-1.30%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Mutual Fund Ser Tr-AlphaCentric LifeSci Healthcare Fund",
+          "pctHeld": {
+            "raw": 0.0058999998,
+            "fmt": "0.59%"
+          },
+          "position": {
+            "raw": 585000,
+            "fmt": "585k",
+            "longFmt": "585,000"
+          },
+          "value": {
+            "raw": 418684,
+            "fmt": "418.68k",
+            "longFmt": "418,684"
+          },
+          "pctChange": {
+            "raw": 0.17,
+            "fmt": "17.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Legg Mason Clearbridge Small Cap Value Fd",
+          "pctHeld": {
+            "raw": 0.0054,
+            "fmt": "0.54%"
+          },
+          "position": {
+            "raw": 531070,
+            "fmt": "531.07k",
+            "longFmt": "531,070"
+          },
+          "value": {
+            "raw": 380086,
+            "fmt": "380.09k",
+            "longFmt": "380,086"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Columbia Fds Var Ser Tr II-Columbia Var Port-Overseas Core Fd",
+          "pctHeld": {
+            "raw": 0.0046,
+            "fmt": "0.46%"
+          },
+          "position": {
+            "raw": 458925,
+            "fmt": "458.93k",
+            "longFmt": "458,925"
+          },
+          "value": {
+            "raw": 328452,
+            "fmt": "328.45k",
+            "longFmt": "328,452"
+          },
+          "pctChange": {
+            "raw": -0.0378,
+            "fmt": "-3.78%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1685491200,
+            "fmt": "2023-05-31"
+          },
+          "organization": "Columbia Fds Ser Tr-Columbia Overseas Value Fd",
+          "pctHeld": {
+            "raw": 0.0032,
+            "fmt": "0.32%"
+          },
+          "position": {
+            "raw": 315878,
+            "fmt": "315.88k",
+            "longFmt": "315,878"
+          },
+          "value": {
+            "raw": 226073,
+            "fmt": "226.07k",
+            "longFmt": "226,073"
+          },
+          "pctChange": {
+            "raw": 0.0321,
+            "fmt": "3.21%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1685491200,
+            "fmt": "2023-05-31"
+          },
+          "organization": "Fidelity NASDAQ Composite Index Fund",
+          "pctHeld": {
+            "raw": 0.0022,
+            "fmt": "0.22%"
+          },
+          "position": {
+            "raw": 214385,
+            "fmt": "214.38k",
+            "longFmt": "214,385"
+          },
+          "value": {
+            "raw": 153435,
+            "fmt": "153.44k",
+            "longFmt": "153,435"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1693440000,
+            "fmt": "2023-08-31"
+          },
+          "organization": "SPDR Portfolio Developed World ex-US ETF",
+          "pctHeld": {
+            "raw": 0.0022,
+            "fmt": "0.22%"
+          },
+          "position": {
+            "raw": 220180,
+            "fmt": "220.18k",
+            "longFmt": "220,180"
+          },
+          "value": {
+            "raw": 157582,
+            "fmt": "157.58k",
+            "longFmt": "157,582"
+          },
+          "pctChange": {
+            "raw": 0.0218,
+            "fmt": "2.18%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Delaware Group Equity Fds IV-Delaware Healthcare Fund",
+          "pctHeld": {
+            "raw": 0.0019,
+            "fmt": "0.19%"
+          },
+          "position": {
+            "raw": 190000,
+            "fmt": "190k",
+            "longFmt": "190,000"
+          },
+          "value": {
+            "raw": 135982,
+            "fmt": "135.98k",
+            "longFmt": "135,982"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Trust For Professional Managers-PMC Diversified Equity Fund",
+          "pctHeld": {
+            "raw": 0.0015,
+            "fmt": "0.15%"
+          },
+          "position": {
+            "raw": 143632,
+            "fmt": "143.63k",
+            "longFmt": "143,632"
+          },
+          "value": {
+            "raw": 102797,
+            "fmt": "102.8k",
+            "longFmt": "102,797"
+          },
+          "pctChange": {
+            "raw": -0.0429,
+            "fmt": "-4.29%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1693440000,
+            "fmt": "2023-08-31"
+          },
+          "organization": "SPDR (R) Idx Shares-SPDR (R) S&P (R) International Small Cap ETF",
+          "pctHeld": {
+            "raw": 0.0015,
+            "fmt": "0.15%"
+          },
+          "position": {
+            "raw": 151460,
+            "fmt": "151.46k",
+            "longFmt": "151,460"
+          },
+          "value": {
+            "raw": 108399,
+            "fmt": "108.4k",
+            "longFmt": "108,399"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        }
+      ]
+    },
+    "insiderTransactions": {
+      "transactions": [
+        {
+          "filerName": "HOLT PATRICK",
+          "transactionText": "Purchase at price 1.02 - 1.06 per share.",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1692144000,
+            "fmt": "2023-08-16"
+          },
+          "value": {
+            "raw": 312315,
+            "fmt": "312.31k",
+            "longFmt": "312,315"
+          },
+          "filerRelation": "Chief Executive Officer",
+          "shares": {
+            "raw": 300000,
+            "fmt": "300k",
+            "longFmt": "300,000"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 23883,
+            "fmt": "23.88k",
+            "longFmt": "23,883"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 23883,
+            "fmt": "23.88k",
+            "longFmt": "23,883"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "REILLY THOMAS CHARLES",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 16667,
+            "fmt": "16.67k",
+            "longFmt": "16,667"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "REILLY THOMAS CHARLES",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1687219200,
+            "fmt": "2023-06-20"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 33334,
+            "fmt": "33.33k",
+            "longFmt": "33,334"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1677542400,
+            "fmt": "2023-02-28"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 16333,
+            "fmt": "16.33k",
+            "longFmt": "16,333"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1677542400,
+            "fmt": "2023-02-28"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 16333,
+            "fmt": "16.33k",
+            "longFmt": "16,333"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "Stock Award(Grant) at price 0.00 per share.",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1676937600,
+            "fmt": "2023-02-21"
+          },
+          "value": {
+            "raw": 0,
+            "fmt": null,
+            "longFmt": "0"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 29134,
+            "fmt": "29.13k",
+            "longFmt": "29,134"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "Stock Award(Grant) at price 0.00 per share.",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1676937600,
+            "fmt": "2023-02-21"
+          },
+          "value": {
+            "raw": 0,
+            "fmt": null,
+            "longFmt": "0"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 58267,
+            "fmt": "58.27k",
+            "longFmt": "58,267"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "MIKHAIL KARIM",
+          "transactionText": "Stock Award(Grant) at price 0.00 per share.",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1676937600,
+            "fmt": "2023-02-21"
+          },
+          "value": {
+            "raw": 0,
+            "fmt": null,
+            "longFmt": "0"
+          },
+          "filerRelation": "Chief Executive Officer",
+          "shares": {
+            "raw": 33334,
+            "fmt": "33.33k",
+            "longFmt": "33,334"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1675123200,
+            "fmt": "2023-01-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 34567,
+            "fmt": "34.57k",
+            "longFmt": "34,567"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1675123200,
+            "fmt": "2023-01-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 34567,
+            "fmt": "34.57k",
+            "longFmt": "34,567"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "MIKHAIL KARIM",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1675123200,
+            "fmt": "2023-01-31"
+          },
+          "filerRelation": "Chief Executive Officer",
+          "shares": {
+            "raw": 207700,
+            "fmt": "207.7k",
+            "longFmt": "207,700"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "WOLD OLSEN PER",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1673308800,
+            "fmt": "2023-01-10"
+          },
+          "filerRelation": "Director",
+          "shares": {
+            "raw": 22027,
+            "fmt": "22.03k",
+            "longFmt": "22,027"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1672358400,
+            "fmt": "2022-12-30"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1672358400,
+            "fmt": "2022-12-30"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "MARKS JASON M",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1660867200,
+            "fmt": "2022-08-19"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 33334,
+            "fmt": "33.33k",
+            "longFmt": "33,334"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1659052800,
+            "fmt": "2022-07-29"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 23884,
+            "fmt": "23.88k",
+            "longFmt": "23,884"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KALB MICHAEL WAYNE",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1659052800,
+            "fmt": "2022-07-29"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1659052800,
+            "fmt": "2022-07-29"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 23884,
+            "fmt": "23.88k",
+            "longFmt": "23,884"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1646006400,
+            "fmt": "2022-02-28"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 16333,
+            "fmt": "16.33k",
+            "longFmt": "16,333"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KALB MICHAEL WAYNE",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1646006400,
+            "fmt": "2022-02-28"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 16333,
+            "fmt": "16.33k",
+            "longFmt": "16,333"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1643587200,
+            "fmt": "2022-01-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 12733,
+            "fmt": "12.73k",
+            "longFmt": "12,733"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KALB MICHAEL WAYNE",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1643587200,
+            "fmt": "2022-01-31"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 12733,
+            "fmt": "12.73k",
+            "longFmt": "12,733"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1643587200,
+            "fmt": "2022-01-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 12733,
+            "fmt": "12.73k",
+            "longFmt": "12,733"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KETCHUM STEVEN B",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1640908800,
+            "fmt": "2021-12-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "KALB MICHAEL WAYNE",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1640908800,
+            "fmt": "2021-12-31"
+          },
+          "filerRelation": "Chief Financial Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "BERG AARON D.",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1640908800,
+            "fmt": "2021-12-31"
+          },
+          "filerRelation": "Officer",
+          "shares": {
+            "raw": 47767,
+            "fmt": "47.77k",
+            "longFmt": "47,767"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "MIKHAIL KARIM",
+          "transactionText": "",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1640908800,
+            "fmt": "2021-12-31"
+          },
+          "filerRelation": "Chief Executive Officer",
+          "shares": {
+            "raw": 11367,
+            "fmt": "11.37k",
+            "longFmt": "11,367"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        },
+        {
+          "filerName": "ZAKRZEWSKI JOSEPH S",
+          "transactionText": "Purchase at price 3.15 - 3.27 per share.",
+          "moneyText": "",
+          "ownership": "D",
+          "startDate": {
+            "raw": 1639526400,
+            "fmt": "2021-12-15"
+          },
+          "value": {
+            "raw": 38999,
+            "fmt": "39k",
+            "longFmt": "38,999"
+          },
+          "filerRelation": "Director",
+          "shares": {
+            "raw": 12000,
+            "fmt": "12k",
+            "longFmt": "12,000"
+          },
+          "filerUrl": "",
+          "maxAge": 1
+        }
+      ],
+      "maxAge": 1
+    },
+    "insiderHolders": {
+      "holders": [
+        {
+          "maxAge": 1,
+          "name": "BERG AARON D.",
+          "relation": "Officer",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          },
+          "positionDirect": {
+            "raw": 533382,
+            "fmt": "533.38k",
+            "longFmt": "533,382"
+          },
+          "positionDirectDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "HOLT PATRICK",
+          "relation": "Chief Executive Officer",
+          "url": "",
+          "transactionDescription": "Purchase",
+          "latestTransDate": {
+            "raw": 1692144000,
+            "fmt": "2023-08-16"
+          },
+          "positionDirect": {
+            "raw": 300000,
+            "fmt": "300k",
+            "longFmt": "300,000"
+          },
+          "positionDirectDate": {
+            "raw": 1692144000,
+            "fmt": "2023-08-16"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "KALB MICHAEL WAYNE",
+          "relation": "Chief Financial Officer",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1659052800,
+            "fmt": "2022-07-29"
+          },
+          "positionDirect": {
+            "raw": 337314,
+            "fmt": "337.31k",
+            "longFmt": "337,314"
+          },
+          "positionDirectDate": {
+            "raw": 1659052800,
+            "fmt": "2022-07-29"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "KETCHUM STEVEN B",
+          "relation": "Officer",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          },
+          "positionDirect": {
+            "raw": 600231,
+            "fmt": "600.23k",
+            "longFmt": "600,231"
+          },
+          "positionDirectDate": {
+            "raw": 1690761600,
+            "fmt": "2023-07-31"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "MARKS JASON M",
+          "relation": "Officer",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1660867200,
+            "fmt": "2022-08-19"
+          },
+          "positionDirect": {
+            "raw": 21917,
+            "fmt": "21.92k",
+            "longFmt": "21,917"
+          },
+          "positionDirectDate": {
+            "raw": 1660867200,
+            "fmt": "2022-08-19"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "MIKHAIL KARIM",
+          "relation": "Chief Executive Officer",
+          "url": "",
+          "transactionDescription": "Stock Award(Grant)",
+          "latestTransDate": {
+            "raw": 1676937600,
+            "fmt": "2023-02-21"
+          },
+          "positionDirect": {
+            "raw": 283507,
+            "fmt": "283.51k",
+            "longFmt": "283,507"
+          },
+          "positionDirectDate": {
+            "raw": 1676937600,
+            "fmt": "2023-02-21"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "REILLY THOMAS CHARLES",
+          "relation": "Chief Financial Officer",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "positionDirect": {
+            "raw": 25375,
+            "fmt": "25.38k",
+            "longFmt": "25,375"
+          },
+          "positionDirectDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "WOLD OLSEN PER",
+          "relation": "Director",
+          "url": "",
+          "transactionDescription": "Conversion of Exercise of derivative security",
+          "latestTransDate": {
+            "raw": 1673308800,
+            "fmt": "2023-01-10"
+          },
+          "positionDirect": {
+            "raw": 171027,
+            "fmt": "171.03k",
+            "longFmt": "171,027"
+          },
+          "positionDirectDate": {
+            "raw": 1673308800,
+            "fmt": "2023-01-10"
+          }
+        },
+        {
+          "maxAge": 1,
+          "name": "ZAKRZEWSKI JOSEPH S",
+          "relation": "Director",
+          "url": "",
+          "transactionDescription": "Purchase",
+          "latestTransDate": {
+            "raw": 1639526400,
+            "fmt": "2021-12-15"
+          },
+          "positionDirect": {
+            "raw": 196547,
+            "fmt": "196.55k",
+            "longFmt": "196,547"
+          },
+          "positionDirectDate": {
+            "raw": 1639526400,
+            "fmt": "2021-12-15"
+          }
+        }
+      ],
+      "maxAge": 1
+    },
+    "netSharePurchaseActivity": {
+      "period": "6m",
+      "netPercentInsiderShares": {
+        "raw": 0.23,
+        "fmt": "23.00%"
+      },
+      "netInfoCount": {
+        "raw": 5,
+        "fmt": "5",
+        "longFmt": "5"
+      },
+      "totalInsiderShares": {
+        "raw": 2125207,
+        "fmt": "2.13M",
+        "longFmt": "2,125,207"
+      },
+      "buyInfoShares": {
+        "raw": 397767,
+        "fmt": "397.77k",
+        "longFmt": "397,767"
+      },
+      "buyPercentInsiderShares": {
+        "raw": 0.23,
+        "fmt": "23.00%"
+      },
+      "sellInfoCount": {
+        "raw": 0,
+        "fmt": null,
+        "longFmt": "0"
+      },
+      "maxAge": 1,
+      "buyInfoCount": {
+        "raw": 5,
+        "fmt": "5",
+        "longFmt": "5"
+      },
+      "netInfoShares": {
+        "raw": 397767,
+        "fmt": "397.77k",
+        "longFmt": "397,767"
+      }
+    },
+    "majorHoldersBreakdown": {
+      "maxAge": 1,
+      "insidersPercentHeld": {
+        "raw": 0.00521,
+        "fmt": "0.52%"
+      },
+      "institutionsPercentHeld": {
+        "raw": 0.29917,
+        "fmt": "29.92%"
+      },
+      "institutionsFloatPercentHeld": {
+        "raw": 0.30074,
+        "fmt": "30.07%"
+      },
+      "institutionsCount": {
+        "raw": 239,
+        "fmt": "239",
+        "longFmt": "239"
+      }
+    },
+    "financialData": {
+      "ebitdaMargins": {
+        "raw": -0.02894,
+        "fmt": "-2.89%"
+      },
+      "profitMargins": {
+        "raw": -0.11062,
+        "fmt": "-11.06%"
+      },
+      "grossMargins": {
+        "raw": 0.71242994,
+        "fmt": "71.24%"
+      },
+      "operatingCashflow": {
+        "raw": -16465000,
+        "fmt": "-16.46M",
+        "longFmt": "-16,465,000"
+      },
+      "revenueGrowth": {
+        "raw": -0.151,
+        "fmt": "-15.10%"
+      },
+      "operatingMargins": {
+        "raw": -0.0377,
+        "fmt": "-3.77%"
+      },
+      "ebitda": {
+        "raw": -10021000,
+        "fmt": "-10.02M",
+        "longFmt": "-10,021,000"
+      },
+      "targetLowPrice": {
+        "raw": 1,
+        "fmt": "1.00"
+      },
+      "recommendationKey": "hold",
+      "grossProfits": {
+        "raw": 260562000,
+        "fmt": "260.56M",
+        "longFmt": "260,562,000"
+      },
+      "freeCashflow": {
+        "raw": -66548500,
+        "fmt": "-66.55M",
+        "longFmt": "-66,548,500"
+      },
+      "targetMedianPrice": {
+        "raw": 2,
+        "fmt": "2.00"
+      },
+      "currentPrice": {
+        "raw": 0.7157,
+        "fmt": "0.72"
+      },
+      "earningsGrowth": {},
+      "currentRatio": {
+        "raw": 2.608,
+        "fmt": "2.61"
+      },
+      "returnOnAssets": {
+        "raw": -0.0089,
+        "fmt": "-0.89%"
+      },
+      "numberOfAnalystOpinions": {
+        "raw": 5,
+        "fmt": "5",
+        "longFmt": "5"
+      },
+      "targetMeanPrice": {
+        "raw": 2.45,
+        "fmt": "2.45"
+      },
+      "debtToEquity": {
+        "raw": 2.001,
+        "fmt": "2.00%"
+      },
+      "returnOnEquity": {
+        "raw": -0.06666,
+        "fmt": "-6.67%"
+      },
+      "targetHighPrice": {
+        "raw": 5,
+        "fmt": "5.00"
+      },
+      "totalCash": {
+        "raw": 312913984,
+        "fmt": "312.91M",
+        "longFmt": "312,913,984"
+      },
+      "totalDebt": {
+        "raw": 11388000,
+        "fmt": "11.39M",
+        "longFmt": "11,388,000"
+      },
+      "totalRevenue": {
+        "raw": 346264992,
+        "fmt": "346.26M",
+        "longFmt": "346,264,992"
+      },
+      "totalCashPerShare": {
+        "raw": 0.767,
+        "fmt": "0.77"
+      },
+      "financialCurrency": "USD",
+      "maxAge": 86400,
+      "revenuePerShare": {
+        "raw": 0.854,
+        "fmt": "0.85"
+      },
+      "quickRatio": {
+        "raw": 1.608,
+        "fmt": "1.61"
+      },
+      "recommendationMean": {
+        "raw": 2.6,
+        "fmt": "2.60"
+      }
+    },
+    "quoteType": {
+      "exchange": "NGM",
+      "shortName": "Amarin Corporation plc",
+      "longName": "Amarin Corporation plc",
+      "exchangeTimezoneName": "America/New_York",
+      "exchangeTimezoneShortName": "EDT",
+      "isEsgPopulated": false,
+      "gmtOffSetMilliseconds": "-14400000",
+      "quoteType": "EQUITY",
+      "symbol": "AMRN",
+      "messageBoardId": "finmb_407863",
+      "market": "us_market"
+    },
+    "institutionOwnership": {
+      "maxAge": 1,
+      "ownershipList": [
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Kynam Capital Management, LP",
+          "pctHeld": {
+            "raw": 0.12149999,
+            "fmt": "12.15%"
+          },
+          "position": {
+            "raw": 12000000,
+            "fmt": "12M",
+            "longFmt": "12,000,000"
+          },
+          "value": {
+            "raw": 8588399,
+            "fmt": "8.59M",
+            "longFmt": "8,588,399"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Morgan Stanley",
+          "pctHeld": {
+            "raw": 0.1141,
+            "fmt": "11.41%"
+          },
+          "position": {
+            "raw": 11277115,
+            "fmt": "11.28M",
+            "longFmt": "11,277,115"
+          },
+          "value": {
+            "raw": 8071030,
+            "fmt": "8.07M",
+            "longFmt": "8,071,030"
+          },
+          "pctChange": {
+            "raw": -0.023599999,
+            "fmt": "-2.36%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Eversept Partners, LP",
+          "pctHeld": {
+            "raw": 0.106300004,
+            "fmt": "10.63%"
+          },
+          "position": {
+            "raw": 10502109,
+            "fmt": "10.5M",
+            "longFmt": "10,502,109"
+          },
+          "value": {
+            "raw": 7516359,
+            "fmt": "7.52M",
+            "longFmt": "7,516,359"
+          },
+          "pctChange": {
+            "raw": -0.28129998,
+            "fmt": "-28.13%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Tang Capital Management, LLC",
+          "pctHeld": {
+            "raw": 0.0719,
+            "fmt": "7.19%"
+          },
+          "position": {
+            "raw": 7100000,
+            "fmt": "7.1M",
+            "longFmt": "7,100,000"
+          },
+          "value": {
+            "raw": 5081469,
+            "fmt": "5.08M",
+            "longFmt": "5,081,469"
+          },
+          "pctChange": {
+            "raw": 0.3148,
+            "fmt": "31.48%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "SCP Investment, LP",
+          "pctHeld": {
+            "raw": 0.065799996,
+            "fmt": "6.58%"
+          },
+          "position": {
+            "raw": 6500000,
+            "fmt": "6.5M",
+            "longFmt": "6,500,000"
+          },
+          "value": {
+            "raw": 4652049,
+            "fmt": "4.65M",
+            "longFmt": "4,652,049"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "DG Capital Management, LLC",
+          "pctHeld": {
+            "raw": 0.0554,
+            "fmt": "5.54%"
+          },
+          "position": {
+            "raw": 5474753,
+            "fmt": "5.47M",
+            "longFmt": "5,474,753"
+          },
+          "value": {
+            "raw": 3918280,
+            "fmt": "3.92M",
+            "longFmt": "3,918,280"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Sarissa Capital Management, LP",
+          "pctHeld": {
+            "raw": 0.0497,
+            "fmt": "4.97%"
+          },
+          "position": {
+            "raw": 4910000,
+            "fmt": "4.91M",
+            "longFmt": "4,910,000"
+          },
+          "value": {
+            "raw": 3514086,
+            "fmt": "3.51M",
+            "longFmt": "3,514,086"
+          },
+          "pctChange": {
+            "raw": 0,
+            "fmt": "0.00%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "Two Sigma Investments, LP",
+          "pctHeld": {
+            "raw": 0.048800003,
+            "fmt": "4.88%"
+          },
+          "position": {
+            "raw": 4826445,
+            "fmt": "4.83M",
+            "longFmt": "4,826,445"
+          },
+          "value": {
+            "raw": 3454286,
+            "fmt": "3.45M",
+            "longFmt": "3,454,286"
+          },
+          "pctChange": {
+            "raw": -0.1321,
+            "fmt": "-13.21%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "13D Management LLC",
+          "pctHeld": {
+            "raw": 0.041300002,
+            "fmt": "4.13%"
+          },
+          "position": {
+            "raw": 4081400,
+            "fmt": "4.08M",
+            "longFmt": "4,081,400"
+          },
+          "value": {
+            "raw": 2921057,
+            "fmt": "2.92M",
+            "longFmt": "2,921,057"
+          },
+          "pctChange": {
+            "raw": -0.020499999,
+            "fmt": "-2.05%"
+          }
+        },
+        {
+          "maxAge": 1,
+          "reportDate": {
+            "raw": 1688083200,
+            "fmt": "2023-06-30"
+          },
+          "organization": "ExodusPoint Capital Management, LP",
+          "pctHeld": {
+            "raw": 0.0394,
+            "fmt": "3.94%"
+          },
+          "position": {
+            "raw": 3893310,
+            "fmt": "3.89M",
+            "longFmt": "3,893,310"
+          },
+          "value": {
+            "raw": 2786441,
+            "fmt": "2.79M",
+            "longFmt": "2,786,441"
+          },
+          "pctChange": {
+            "raw": 1,
+            "fmt": "100.00%"
+          }
+        }
+      ]
+    },
+    "calendarEvents": {
+      "maxAge": 1,
+      "earnings": {
+        "earningsDate": [
+          {
+            "raw": 1698386401,
+            "fmt": "2023-10-27"
+          },
+          {
+            "raw": 1698818401,
+            "fmt": "2023-11-01"
+          }
+        ],
+        "earningsAverage": {
+          "raw": -0.04,
+          "fmt": "-0.04"
+        },
+        "earningsLow": {
+          "raw": -0.07,
+          "fmt": "-0.07"
+        },
+        "earningsHigh": {
+          "raw": -0.02,
+          "fmt": "-0.02"
+        },
+        "revenueAverage": {
+          "raw": 58650000,
+          "fmt": "58.65M",
+          "longFmt": "58,650,000"
+        },
+        "revenueLow": {
+          "raw": 56000000,
+          "fmt": "56M",
+          "longFmt": "56,000,000"
+        },
+        "revenueHigh": {
+          "raw": 60100000,
+          "fmt": "60.1M",
+          "longFmt": "60,100,000"
+        }
+      },
+      "exDividendDate": {},
+      "dividendDate": {}
+    },
+    "summaryDetail": {
+      "previousClose": {
+        "raw": 0.7872,
+        "fmt": "0.7872"
+      },
+      "regularMarketOpen": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "twoHundredDayAverage": {
+        "raw": 1.34375,
+        "fmt": "1.3438"
+      },
+      "trailingAnnualDividendYield": {
+        "raw": 0,
+        "fmt": "0.00%"
+      },
+      "payoutRatio": {
+        "raw": 0,
+        "fmt": "0.00%"
+      },
+      "volume24Hr": {},
+      "regularMarketDayHigh": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "navPrice": {},
+      "averageDailyVolume10Day": {
+        "raw": 1573110,
+        "fmt": "1.57M",
+        "longFmt": "1,573,110"
+      },
+      "totalAssets": {},
+      "regularMarketPreviousClose": {
+        "raw": 0.7872,
+        "fmt": "0.7872"
+      },
+      "fiftyDayAverage": {
+        "raw": 0.991,
+        "fmt": "0.9910"
+      },
+      "trailingAnnualDividendRate": {
+        "raw": 0,
+        "fmt": "0.00"
+      },
+      "open": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "toCurrency": null,
+      "averageVolume10days": {
+        "raw": 1573110,
+        "fmt": "1.57M",
+        "longFmt": "1,573,110"
+      },
+      "expireDate": {},
+      "yield": {},
+      "algorithm": null,
+      "dividendRate": {},
+      "exDividendDate": {},
+      "beta": {
+        "raw": 2.083995,
+        "fmt": "2.08"
+      },
+      "circulatingSupply": {},
+      "startDate": {},
+      "regularMarketDayLow": {
+        "raw": 0.7083,
+        "fmt": "0.7083"
+      },
+      "priceHint": {
+        "raw": 4,
+        "fmt": "4",
+        "longFmt": "4"
+      },
+      "currency": "USD",
+      "regularMarketVolume": {
+        "raw": 4731624,
+        "fmt": "4.73M",
+        "longFmt": "4,731,624"
+      },
+      "lastMarket": null,
+      "maxSupply": {},
+      "openInterest": {},
+      "marketCap": {
+        "raw": 291940448,
+        "fmt": "291.94M",
+        "longFmt": "291,940,448"
+      },
+      "volumeAllCurrencies": {},
+      "strikePrice": {},
+      "averageVolume": {
+        "raw": 2453459,
+        "fmt": "2.45M",
+        "longFmt": "2,453,459"
+      },
+      "priceToSalesTrailing12Months": {
+        "raw": 0.8431128,
+        "fmt": "0.84"
+      },
+      "dayLow": {
+        "raw": 0.7083,
+        "fmt": "0.7083"
+      },
+      "ask": {
+        "raw": 0,
+        "fmt": "0.0000"
+      },
+      "ytdReturn": {},
+      "askSize": {
+        "raw": 1300,
+        "fmt": "1.3k",
+        "longFmt": "1,300"
+      },
+      "volume": {
+        "raw": 4731624,
+        "fmt": "4.73M",
+        "longFmt": "4,731,624"
+      },
+      "fiftyTwoWeekHigh": {
+        "raw": 2.23,
+        "fmt": "2.2300"
+      },
+      "forwardPE": {
+        "raw": -4.7713327,
+        "fmt": "-4.77"
+      },
+      "maxAge": 1,
+      "fromCurrency": null,
+      "fiveYearAvgDividendYield": {},
+      "fiftyTwoWeekLow": {
+        "raw": 0.7083,
+        "fmt": "0.7083"
+      },
+      "bid": {
+        "raw": 0,
+        "fmt": "0.0000"
+      },
+      "tradeable": false,
+      "dividendYield": {},
+      "bidSize": {
+        "raw": 1100,
+        "fmt": "1.1k",
+        "longFmt": "1,100"
+      },
+      "dayHigh": {
+        "raw": 0.795,
+        "fmt": "0.7950"
+      },
+      "coinMarketCapLink": null
+    },
+    "symbol": "AMRN",
+    "esgScores": {},
+    "upgradeDowngradeHistory": {
+      "history": [
+        {
+          "epochGradeDate": 1689854653,
+          "firm": "Goldman Sachs",
+          "toGrade": "Sell",
+          "fromGrade": "Sell",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1689775292,
+          "firm": "Northland Capital Markets",
+          "toGrade": "Market Perform",
+          "fromGrade": "Market Perform",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1673000535,
+          "firm": "Jefferies",
+          "toGrade": "Buy",
+          "fromGrade": "Hold",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1666175641,
+          "firm": "SVB Leerink",
+          "toGrade": "Market Perform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1653391200,
+          "firm": "Goldman Sachs",
+          "toGrade": "Sell",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1651827057,
+          "firm": "JP Morgan",
+          "toGrade": "Underweight",
+          "fromGrade": "Neutral",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1651747177,
+          "firm": "HC Wainwright & Co.",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1651745026,
+          "firm": "SVB Leerink",
+          "toGrade": "Market Perform",
+          "fromGrade": "Outperform",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1645006617,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1643639814,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1631184640,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1620816672,
+          "firm": "Goldman Sachs",
+          "toGrade": "Sell",
+          "fromGrade": "Neutral",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1612177800,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1601287553,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1598437578,
+          "firm": "Piper Sandler",
+          "toGrade": "Overweight",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1588598603,
+          "firm": "Aegis Capital",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1588587906,
+          "firm": "SVB Leerink",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1585756199,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1585664101,
+          "firm": "Stifel",
+          "toGrade": "Hold",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1585658904,
+          "firm": "Oppenheimer",
+          "toGrade": "Perform",
+          "fromGrade": "Underperform",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1585654170,
+          "firm": "Goldman Sachs",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1585646308,
+          "firm": "Jefferies",
+          "toGrade": "Hold",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1584092457,
+          "firm": "Goldman Sachs",
+          "toGrade": "Buy",
+          "fromGrade": "Neutral",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1583163472,
+          "firm": "Cowen & Co.",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1582722610,
+          "firm": "Oppenheimer",
+          "toGrade": "Underperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1582022742,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "Neutral",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1578311367,
+          "firm": "JP Morgan",
+          "toGrade": "Neutral",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1576523521,
+          "firm": "Oppenheimer",
+          "toGrade": "Underperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1576508159,
+          "firm": "Stifel",
+          "toGrade": "Hold",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1574249317,
+          "firm": "Oppenheimer",
+          "toGrade": "Underperform",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1574080042,
+          "firm": "Citi",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1572529256,
+          "firm": "Aegis Capital",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1571135930,
+          "firm": "Goldman Sachs",
+          "toGrade": "Neutral",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1553251788,
+          "firm": "Stifel Nicolaus",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1541164194,
+          "firm": "Citigroup",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1539777550,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "Buy",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1537880689,
+          "firm": "Jefferies",
+          "toGrade": "Buy",
+          "fromGrade": "Buy",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1537874066,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "Buy",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1476849600,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1475655834,
+          "firm": "Cantor Fitzgerald",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1475614993,
+          "firm": "Cantor Fitzgerald",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1463051654,
+          "firm": "Jefferies",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1426159507,
+          "firm": "H.C. Wainwright",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1424270755,
+          "firm": "SunTrust Robinson Humphrey",
+          "toGrade": "Buy",
+          "fromGrade": "Neutral",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1415628000,
+          "firm": "Citigroup",
+          "toGrade": "Neutral",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1399894152,
+          "firm": "Citigroup",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1393602370,
+          "firm": "Aegis Capital",
+          "toGrade": "Hold",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1389906000,
+          "firm": "MKM Partners",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1383911330,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "Neutral",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1383163200,
+          "firm": "Leerink Swann",
+          "toGrade": "Market Perform",
+          "fromGrade": "Outperform",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1383145253,
+          "firm": "Aegis Capital",
+          "toGrade": "Hold",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1382095243,
+          "firm": "Citigroup",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1382040000,
+          "firm": "H.C. Wainwright",
+          "toGrade": "Neutral",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1382005578,
+          "firm": "JP Morgan",
+          "toGrade": "Neutral",
+          "fromGrade": "Overweight",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1382004692,
+          "firm": "Canaccord Genuity",
+          "toGrade": "Hold",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1381958309,
+          "firm": "Leerink Swann",
+          "toGrade": "Outperform",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1381954283,
+          "firm": "Aegis Capital",
+          "toGrade": "Hold",
+          "fromGrade": "Buy",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1379416101,
+          "firm": "Goldman Sachs",
+          "toGrade": "Neutral",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1378295347,
+          "firm": "SunTrust Robinson Humphrey",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1376392615,
+          "firm": "H.C. Wainwright",
+          "toGrade": "Buy",
+          "fromGrade": "Neutral",
+          "action": "up"
+        },
+        {
+          "epochGradeDate": 1371759299,
+          "firm": "Oppenheimer",
+          "toGrade": "Perform",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1362398154,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1357651828,
+          "firm": "Jefferies",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1354913044,
+          "firm": "Aegis Capital",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1354895921,
+          "firm": "Canaccord Genuity",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1354894024,
+          "firm": "UBS",
+          "toGrade": "Neutral",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1354017120,
+          "firm": "Citigroup",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1350308100,
+          "firm": "JP Morgan",
+          "toGrade": "Overweight",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1349262960,
+          "firm": "Wedbush",
+          "toGrade": "Neutral",
+          "fromGrade": "Outperform",
+          "action": "down"
+        },
+        {
+          "epochGradeDate": 1344521400,
+          "firm": "Canaccord Genuity",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        },
+        {
+          "epochGradeDate": 1341827220,
+          "firm": "Aegis Capital",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "init"
+        },
+        {
+          "epochGradeDate": 1340795280,
+          "firm": "Jefferies",
+          "toGrade": "Buy",
+          "fromGrade": "",
+          "action": "main"
+        }
+      ],
+      "maxAge": 86400
+    },
+    "pageViews": {
+      "shortTermTrend": "UP",
+      "midTermTrend": "UP",
+      "longTermTrend": "UP",
+      "maxAge": 1
+    }
+  }

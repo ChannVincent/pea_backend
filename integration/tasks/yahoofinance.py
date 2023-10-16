@@ -15,10 +15,10 @@ def sync(force=False):
     now = datetime.datetime.now()
     for business in businesses:
         if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
-            # cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
-            # integrate_cashflow(business, cashflow)
-            # summary = api.get_summary(stock=business.symbol, country=business.country_code)
-            # integrate_summary(business, summary)
+            cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+            integrate_cashflow(business, cashflow)
+            summary = api.get_summary(stock=business.symbol, country=business.country_code)
+            integrate_summary(business, summary)
             # recent_updates = api.get_updates(stock=business.symbol, country=business.country_code)
             # integrate_recent_updates(business, recent_updates)
             market_price = api.get_market_price(stock=business.symbol, country=business.country_code)
