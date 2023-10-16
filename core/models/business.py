@@ -236,3 +236,13 @@ class MarketPrice(models.Model):
     def __str__(self):
         return f"{self.business}_{self.date}"
         
+
+class BusinessEvent(models.Model):
+    business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    amount = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+    date = models.DateTimeField(null=True, blank=True)
+    type = models.CharField(max_length=256)
+    data = models.DecimalField(default=None, null=True, blank=True, max_digits=14, decimal_places=3)
+
+    def __str__(self):
+        return f"{self.business}_{self.type}"

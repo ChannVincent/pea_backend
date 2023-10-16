@@ -1,4 +1,4 @@
-from core.models.business import Business, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm, MarketPrice
+from core.models.business import Business, BusinessEvent, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm, MarketPrice
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 import datetime
@@ -362,8 +362,8 @@ def integrate_recent_updates(business, recent_updates):
         analyst_grade.save()
         
 
-def integrate_market_price(business, market_price):
-    prices = market_price.get("prices")
+def integrate_market_price(business, market_price_data):
+    prices = market_price_data.get("prices")
     if not prices:
         return
     for price in prices:
@@ -381,3 +381,16 @@ def integrate_market_price(business, market_price):
         market_price.volume = price.get("volume")
         market_price.adjclose = price.get("adjclose")
         market_price.save()
+    events = market_price_data.get("eventsData")
+    for event in events:
+        timestamp = event.get("date")
+        if not timestamp:
+            continue
+        date = datetime.datetime.fromtimestamp(timestamp)
+        business_event = BusinessEvent.objects.filter(business=business, date=date)
+        if not business_event:
+            business_event = BusinessEvent(business=business, date=date)
+        business_event.type = event.get("type")
+        business_event.amount = event.get("amount")
+        business_event.data = event.get("data")
+        business_event.save()
