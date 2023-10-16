@@ -1,4 +1,6 @@
 from django.db import models
+from core.config import TIME_BETWEEN_UPDATES
+import datetime
 
 
 class Business(models.Model):
@@ -22,6 +24,15 @@ class Business(models.Model):
     symbol = models.CharField(max_length=20, unique=True, default="")
     country_code = models.CharField(max_length=20, choices=COUNTRY_CHOICES, default="FR")
     last_update = models.DateTimeField(null=True, blank=True)
+
+    def is_updated(self):
+        now = datetime.datetime.now()
+        if self.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) > now:
+            return True
+        return False
+    
+    def updated(self):
+        return self.last_update.strftime("%Y-%m-%d")
 
     def __str__(self):
         return self.name

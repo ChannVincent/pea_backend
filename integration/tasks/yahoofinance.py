@@ -1,12 +1,10 @@
 from core.models.business import Business, BusinessEvent, BusinessInfo, Industry, Sector, YearlyReport, QuarterReport, AnalystGrade, GradeFirm, MarketPrice
 from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
+from core.config import CASH_MULTIPLIER, TIME_BETWEEN_UPDATES
 import datetime
 import json
 
-
-CASH_MULTIPLIER = 1 * 1000 * 1000 # 1M
-TIME_BETWEEN_UPDATES = 24 * 30 # hours
 
 def sync(force=False):
     integration = YahooFinanceIntegration.objects.first()
@@ -14,7 +12,7 @@ def sync(force=False):
     businesses = Business.objects.all()
     now = datetime.datetime.now()
     for business in businesses:
-        if not business.last_update or business.last_update + datetime.timedelta(hours=TIME_BETWEEN_UPDATES) < now or force:
+        if not business.last_update or not business.is_updated() or force:
             cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
             integrate_cashflow(business, cashflow)
             summary = api.get_summary(stock=business.symbol, country=business.country_code)
@@ -25,6 +23,20 @@ def sync(force=False):
             integrate_market_price(business, market_price)
             business.last_update = now
             business.save()
+
+
+def sync_business(business):
+    integration = YahooFinanceIntegration.objects.first()
+    api = YahooFinanceAPI(integration.api_key, integration.api_host)
+    now = datetime.datetime.now()
+    cashflow = api.get_cashflow(stock=business.symbol, country=business.country_code)
+    integrate_cashflow(business, cashflow)
+    summary = api.get_summary(stock=business.symbol, country=business.country_code)
+    integrate_summary(business, summary)
+    market_price = api.get_market_price(stock=business.symbol, country=business.country_code)
+    integrate_market_price(business, market_price)
+    business.last_update = now
+    business.save()
 
 
 def integrate_cashflow(business, cashflow):
