@@ -43,6 +43,8 @@ class Business(models.Model):
             'name': self.name,
             'symbol': self.symbol,
             'country_code': self.country_code,
+            'updated': self.updated(),
+            'is_updated': self.is_updated(),
         }
 
 
