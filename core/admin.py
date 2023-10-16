@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models.business import Business, BusinessInfo, AnalystGrade, Industry, Sector, QuarterReport, YearlyReport, MarketPrice, BusinessEvent
-from .models.debug import DebugApiLog
 
 
 class YearlyReportInline(admin.TabularInline):
@@ -32,10 +31,6 @@ class BusinessAdmin(admin.ModelAdmin):
 class BusinessInfoAdmin(admin.ModelAdmin):
     list_display = ("business", "last_update")
     inlines = [AnalystGradeInline]
-
-@admin.register(DebugApiLog)
-class DebugApiLogAdmin(admin.ModelAdmin):
-    list_display = ("date", "url", "params")
 
 @admin.register(MarketPrice)
 class MarketPriceAdmin(admin.ModelAdmin):
