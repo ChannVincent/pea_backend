@@ -1,5 +1,5 @@
 import requests
-from models import DebugApiLog
+from integration.models import DebugApiLog
 
 # https://rapidapi.com/apidojo/api/yahoo-finance1
 class YahooFinanceAPI:

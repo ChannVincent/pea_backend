@@ -3,7 +3,7 @@ from integration.models.yahoofinance import YahooFinanceIntegration
 from integration.views.yahoofinance import YahooFinanceAPI
 from core.config import CASH_MULTIPLIER, TIME_BETWEEN_UPDATES
 import datetime
-import json
+from django.http import JsonResponse
 
 
 def sync(force=False):
@@ -25,7 +25,15 @@ def sync(force=False):
             business.save()
 
 
-def sync_business(business):
+def sync_businesses(request):
+    sync(False)
+    return JsonResponse({"status": "done"})
+
+
+def sync_business(request, business_id):
+    business = Business.objects.filter(pk=business_id).first()
+    if not business:
+        return
     integration = YahooFinanceIntegration.objects.first()
     api = YahooFinanceAPI(integration.api_key, integration.api_host)
     now = datetime.datetime.now()
@@ -37,6 +45,7 @@ def sync_business(business):
     integrate_market_price(business, market_price)
     business.last_update = now
     business.save()
+    return JsonResponse({"status": "done"})
 
 
 def integrate_cashflow(business, cashflow):
@@ -399,7 +408,7 @@ def integrate_market_price(business, market_price_data):
         if not timestamp:
             continue
         date = datetime.datetime.fromtimestamp(timestamp)
-        business_event = BusinessEvent.objects.filter(business=business, date=date)
+        business_event = BusinessEvent.objects.filter(business=business, date=date).first()
         if not business_event:
             business_event = BusinessEvent(business=business, date=date)
         business_event.type = event.get("type")
