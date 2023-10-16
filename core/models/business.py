@@ -33,7 +33,7 @@ class Business(models.Model):
     
     def updated(self):
         if self.last_update:
-            return self.last_update.strftime("%Y-%m-%d")
+            return self.last_update.strftime("%Y-%m-%d %H:%M")
         return None
 
     def __str__(self):
