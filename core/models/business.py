@@ -102,9 +102,11 @@ class BusinessInfo(models.Model):
 class BusinessRatio(models.Model):
     business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
     market_cap = models.IntegerField(default=None, null=True, blank=True)
-    net_margin = models.DecimalField(default=None, null=True, blank=True, max_digits=6, decimal_places=2)
+    net_margin = models.DecimalField(default=None, null=True, blank=True, max_digits=6, decimal_places=1, help_text="percent")
     cash_position = models.IntegerField(default=None, null=True, blank=True)
     debt = models.IntegerField(default=None, null=True, blank=True)
+    years_to_repay_debt = models.DecimalField(default=None, null=True, blank=True, max_digits=10, decimal_places=1)
+    years_of_cash = models.DecimalField(default=None, null=True, blank=True, max_digits=10, decimal_places=1)
     revenue = models.IntegerField(default=None, null=True, blank=True)
     earnings = models.IntegerField(default=None, null=True, blank=True)
 

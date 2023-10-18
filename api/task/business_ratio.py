@@ -13,9 +13,14 @@ def caculate_business_ratio(business):
     market_cap = business_info.market_cap
     # def
     business_ratio.market_cap = market_cap
-    business_ratio.net_margin = earnings / revenue
     business_ratio.cash_position = last_yearly_report.end_cash_position
     business_ratio.debt = last_yearly_report.long_term_debt
     business_ratio.earnings = last_yearly_report.earning
     business_ratio.revenue = last_yearly_report.revenue
+    if earnings and revenue:
+        business_ratio.net_margin = earnings * 100 / revenue
+    if last_yearly_report.long_term_debt and last_yearly_report.earning:
+        business_ratio.years_to_repay_debt = last_yearly_report.long_term_debt / last_yearly_report.earning
+    if last_yearly_report.end_cash_position and last_yearly_report.earning:
+        business_ratio.years_of_cash = last_yearly_report.end_cash_position / last_yearly_report.earning
     business_ratio.save()

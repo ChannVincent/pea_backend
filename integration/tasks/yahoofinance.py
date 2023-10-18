@@ -25,6 +25,12 @@ def sync(force=False):
             caculate_business_ratio(business)
 
 
+def sync_ratio():
+    businesses = Business.objects.all()
+    for business in businesses:
+        caculate_business_ratio(business)
+        
+
 def sync_businesses(request):
     sync(False)
     return JsonResponse({"status": "done"})
