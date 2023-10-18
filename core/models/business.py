@@ -40,6 +40,7 @@ class Business(models.Model):
         return self.name
     
     def serialize(self):
+        business_info = BusinessInfo.objects.filter(business=self).first()
         return {
             'pk': self.pk,
             'name': self.name,
@@ -47,6 +48,7 @@ class Business(models.Model):
             'country_code': self.country_code,
             'updated': self.updated(),
             'is_updated': self.is_updated(),
+            'business_info': business_info.serialize()
         }
 
 
@@ -69,7 +71,7 @@ class Sector(models.Model):
 
 class BusinessInfo(models.Model):
     last_update = models.DateTimeField(auto_now=True)
-    business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, related_name="business_info", null=True, on_delete=models.CASCADE)
     long_business_summary = models.TextField(default=None, null=True, blank=True)
     website = models.CharField(default=None, max_length=256, null=True, blank=True)
     country = models.CharField(default=None, max_length=256, null=True, blank=True)
@@ -82,6 +84,17 @@ class BusinessInfo(models.Model):
     def __str__(self):
         return f"{self.business} info"
 
+    def serialize(self):
+        return {
+            "long_business_summary": self.long_business_summary,
+            "website": self.website,
+            "country": self.country,
+            "city": self.city,
+            "full_time_employees": self.full_time_employees,
+            "market_cap": self.market_cap,
+            "industry": self.industry.__str__(),
+            "sector": self.sector.__str__()
+        }
 
 class GradeFirm(models.Model):
     name = models.CharField(default=None, max_length=256, null=True, blank=True)

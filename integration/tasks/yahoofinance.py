@@ -45,7 +45,7 @@ def sync_business(request, business_id):
     integrate_market_price(business, market_price)
     business.last_update = now
     business.save()
-    return JsonResponse({"status": "done"})
+    return JsonResponse({"status": "done", "business": business})
 
 
 def integrate_cashflow(business, cashflow):
