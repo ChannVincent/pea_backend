@@ -4,6 +4,7 @@ from integration.views.yahoofinance import YahooFinanceAPI
 from core.config import CASH_MULTIPLIER, TIME_BETWEEN_UPDATES
 import datetime
 from django.http import JsonResponse
+from api.task.business_ratio import caculate_business_ratio
 
 
 def sync(force=False):
@@ -17,12 +18,11 @@ def sync(force=False):
             integrate_cashflow(business, cashflow)
             summary = api.get_summary(stock=business.symbol, country=business.country_code)
             integrate_summary(business, summary)
-            # recent_updates = api.get_updates(stock=business.symbol, country=business.country_code)
-            # integrate_recent_updates(business, recent_updates)
             market_price = api.get_market_price(stock=business.symbol, country=business.country_code)
             integrate_market_price(business, market_price)
             business.last_update = now
             business.save()
+            caculate_business_ratio(business)
 
 
 def sync_businesses(request):
@@ -45,6 +45,7 @@ def sync_business(request, business_id):
     integrate_market_price(business, market_price)
     business.last_update = now
     business.save()
+    caculate_business_ratio(business)
     return JsonResponse({"status": "done", "business": business.serialize()})
 
 

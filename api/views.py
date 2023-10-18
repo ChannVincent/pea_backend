@@ -1,5 +1,7 @@
-from django.http import JsonResponse
+from django.shortcuts import render
 from core.models.business import Business, YearlyReport, QuarterReport
+from django.http import JsonResponse
+
 
 def get_business_detail(request, business_pk):
     if not business_pk:
@@ -18,9 +20,8 @@ def get_business_detail(request, business_pk):
     }
     return JsonResponse(data)
 
+
 def get_business_list(request):
-    if request.method == 'GET':
-        search = request.GET.get('search','')
     businesses = Business.objects.all()
     result = []
     for business in businesses:

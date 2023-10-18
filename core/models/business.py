@@ -40,7 +40,8 @@ class Business(models.Model):
         return self.name
     
     def serialize(self):
-        business_info = BusinessInfo.objects.filter(business=self).first()
+        business_info = BusinessInfo.objects.filter(business=self).last()
+        business_ratio = BusinessRatio.objects.filter(business=self).last()
         return {
             'pk': self.pk,
             'name': self.name,
@@ -48,7 +49,8 @@ class Business(models.Model):
             'country_code': self.country_code,
             'updated': self.updated(),
             'is_updated': self.is_updated(),
-            'business_info': business_info.serialize()
+            'business_info': business_info.serialize(),
+            'business_ratio': business_ratio.serialize()
         }
 
 
@@ -95,6 +97,30 @@ class BusinessInfo(models.Model):
             "industry": self.industry.__str__(),
             "sector": self.sector.__str__()
         }
+
+
+class BusinessRatio(models.Model):
+    business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    market_cap = models.IntegerField(default=None, null=True, blank=True)
+    net_margin = models.DecimalField(default=None, null=True, blank=True, max_digits=6, decimal_places=2)
+    cash_position = models.IntegerField(default=None, null=True, blank=True)
+    debt = models.IntegerField(default=None, null=True, blank=True)
+    revenue = models.IntegerField(default=None, null=True, blank=True)
+    earnings = models.IntegerField(default=None, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.business}_ratio"
+    
+    def serialize(self):
+        return {
+            "market_cap": self.market_cap,
+            "net_margin": self.net_margin,
+            "cash_position": self.cash_position,
+            "debt": self.debt,
+            "revenue": self.revenue,
+            "earnings": self.earnings,
+        }
+    
 
 class GradeFirm(models.Model):
     name = models.CharField(default=None, max_length=256, null=True, blank=True)
