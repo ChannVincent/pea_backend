@@ -117,6 +117,8 @@ class BusinessRatio(models.Model):
         return {
             "market_cap": self.market_cap,
             "net_margin": self.net_margin,
+            "years_to_repay_debt": self.years_to_repay_debt,
+            "years_of_cash": self.years_of_cash,
             "cash_position": self.cash_position,
             "debt": self.debt,
             "revenue": self.revenue,
