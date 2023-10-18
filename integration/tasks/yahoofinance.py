@@ -45,7 +45,7 @@ def sync_business(request, business_id):
     integrate_market_price(business, market_price)
     business.last_update = now
     business.save()
-    return JsonResponse({"status": "done", "business": business})
+    return JsonResponse({"status": "done", "business": business.serialize()})
 
 
 def integrate_cashflow(business, cashflow):
@@ -309,8 +309,8 @@ def integrate_summary(business, summary):
     industry = Industry.objects.filter(industry_key=industry_key).first()
     if not industry:
         industry = Industry(industry_key=industry_key)
-    industry.industry = profile.get("industryDisp")
-    industry.save()
+        industry.industry = profile.get("industryDisp")
+        industry.save()
     business_info.industry = industry
     # sector
     sector_key = profile.get("sectorKey")
@@ -319,9 +319,9 @@ def integrate_summary(business, summary):
     sector = Sector.objects.filter(sector_key=sector_key).first()
     if not sector:
         sector = Sector(sector_key=sector_key)
-    sector.sector_disp = profile.get("sectorDisp")
-    sector.sector = profile.get("sector")
-    sector.save()
+        sector.sector_disp = profile.get("sectorDisp")
+        sector.sector = profile.get("sector")
+        sector.save()
     business_info.sector = sector
     business_info.save()
     # upgrade downgrade : nothing for french industry ?
