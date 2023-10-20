@@ -40,8 +40,9 @@ class Business(models.Model):
         return self.name
     
     def serialize(self):
+        last_year = datetime.datetime.now().year - 1
         business_info = BusinessInfo.objects.filter(business=self).last()
-        business_ratio = BusinessRatio.objects.filter(business=self).last()
+        business_ratio = BusinessRatio.objects.filter(business=self, year=last_year).last()
         return {
             'pk': self.pk,
             'name': self.name,
@@ -101,6 +102,7 @@ class BusinessInfo(models.Model):
 
 class BusinessRatio(models.Model):
     business = models.ForeignKey(Business, null=True, on_delete=models.CASCADE)
+    year = models.IntegerField(default=None, null=True, blank=True)
     market_cap = models.IntegerField(default=None, null=True, blank=True)
     net_margin = models.DecimalField(default=None, null=True, blank=True, max_digits=6, decimal_places=1, help_text="percent")
     cash_position = models.IntegerField(default=None, null=True, blank=True)
@@ -109,12 +111,15 @@ class BusinessRatio(models.Model):
     years_of_cash = models.DecimalField(default=None, null=True, blank=True, max_digits=10, decimal_places=1)
     revenue = models.IntegerField(default=None, null=True, blank=True)
     earnings = models.IntegerField(default=None, null=True, blank=True)
+    operating_cash_flow = models.IntegerField(default=None, null=True, blank=True)
+    depreciation = models.IntegerField(default=None, null=True, blank=True)
 
     def __str__(self):
         return f"{self.business}_ratio"
     
     def serialize(self):
         return {
+            "year": self.year,
             "market_cap": self.market_cap,
             "net_margin": self.net_margin,
             "years_to_repay_debt": self.years_to_repay_debt,
@@ -123,6 +128,8 @@ class BusinessRatio(models.Model):
             "debt": self.debt,
             "revenue": self.revenue,
             "earnings": self.earnings,
+            "operating_cash_flow": self.operating_cash_flow,
+            "depreciation": self.depreciation
         }
     
 

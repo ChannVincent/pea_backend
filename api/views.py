@@ -1,22 +1,16 @@
 from django.shortcuts import render
-from core.models.business import Business, YearlyReport, QuarterReport
+from core.models.business import Business, BusinessRatio
 from django.http import JsonResponse
 
 
 def get_business_detail(request, business_pk):
     if not business_pk:
         return JsonResponse({'status': 'error : no business found'})
-    years = []
-    yearly_reports = YearlyReport.objects.filter(business__pk=business_pk)
-    for year in yearly_reports:
-        years.append(year.serialize())
-    quarters = []
-    quarter_reports = QuarterReport.objects.filter(business__pk=business_pk)
-    for quarter in quarter_reports:
-        quarters.append(quarter.serialize())
+    business = Business.objects.filter(pk=business_pk).first()
+    business_ratios = BusinessRatio.objects.filter(business=business).all()
     data = {
-        'yearly_reports': years,
-        'quarter_reports': quarters,
+        'business': business.serialize(),
+        'business_ratios': business_ratios
     }
     return JsonResponse(data)
 
