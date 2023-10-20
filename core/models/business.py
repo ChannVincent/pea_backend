@@ -115,7 +115,7 @@ class BusinessRatio(models.Model):
     depreciation = models.IntegerField(default=None, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.business}_ratio"
+        return f"{self.business}_ratio_{self.year}"
     
     def serialize(self):
         return {
