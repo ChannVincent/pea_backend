@@ -7,7 +7,7 @@ def get_business_detail(request, business_pk):
     if not business_pk:
         return JsonResponse({'status': 'error : no business found'})
     business = Business.objects.filter(pk=business_pk).first()
-    business_ratios = BusinessRatio.objects.filter(business=business).all()
+    business_ratios = BusinessRatio.objects.filter(business=business).order_by('year').all()
     ratios = []
     for ratio in business_ratios:
         ratios.append(ratio.serialize())
