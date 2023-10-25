@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models.business import Business, BusinessInfo, AnalystGrade, Industry, Sector, QuarterReport, YearlyReport, MarketPrice, BusinessEvent
 
+admin.site.register(Industry)
+
+admin.site.register(Sector)
 
 class YearlyReportInline(admin.TabularInline):
     model = YearlyReport
